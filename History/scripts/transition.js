@@ -5,10 +5,20 @@ var transitions = {
     },
     addTransitionsAutomatic: function () {
         var objects = $("[data-transition]");
+        function returnOne(first, second) {
+            first = (typeof first !== 'undefined') ? first : second;
+            return first;
+        }
+        for (var i = 0; i < objects.length; i++) {
+            var transitionsJSON = JSON.parse(objects[i].getAttribute("data-transition").replace(/["']/g, '"'));
+            for (var c = 0; c < transitionsJSON.transitions.length; c++) {
+                var cu = transitionsJSON.transitions[c];
+                transitions.addTransition(objects[i], returnOne(cu.c, cu.css),returnOne(cu.u,cu.unit),returnOne(cu.sY,cu.startY),returnOne(cu.eY,cu.endY),returnOne(cu.sV,cu.startValue),returnOne(cu.eV,cu.endValue),returnOne(cu.e,cu.easing));
+            }
+        }
         console.log(objects);
     }
 };
-
 function transition(object, cssStyle, unit, transitionStartScroll, transitionEndScroll, start, end, easing) {
     this.object = object;
     this.cssStyle = cssStyle;
@@ -32,11 +42,17 @@ transition.prototype.updateTransition = function () {
 }
 
 function update() {
-    for (i = 0; i < transitions.list.length; i++) {
+    for (var i = 0; i < transitions.list.length; i++) {
         if (transitions.list[i].isInRange($(document).scrollTop())) {
             transitions.list[i].updateTransition();
         }
     }
     requestAnimationFrame(update);
 }
-$(update());
+
+function init() {
+    transitions.addTransitionsAutomatic();
+    update();
+}
+
+$(init());
