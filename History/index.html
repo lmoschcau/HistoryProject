@@ -1,149 +1,55 @@
-﻿<!DOCTYPE html>
+<!doctype html>
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="de">
+
 <head>
-    <meta charset="utf-8" />
-    <title></title>
-    <link href="style/main.css" type="text/css" rel="stylesheet" />
+  <title>Die Außenpolitik Wilhelm II.</title>
+  <link rel="icon" type="icon/png" href="img/favicon.svg">
 
-    <script type="text/javascript" src="scripts/plugins/jQuery.js"></script>
-    <script type="text/javascript" src="scripts/plugins/easing.js"></script>
+    <link href="style/style.css" type="text/css" rel="stylesheet">
 
-    <script type="text/javascript" src="scripts/transition.js"></script>
+    <!-- Plugins -->
+    <script type="text/javascript" src="script/plugins/jQuery.js"></script>
+
+    <script type="text/javascript" src="script/script.js"></script>
+
+  <meta name="author" content="Max Zimmermann">
+  <meta name="description" content="">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+
 <body>
-    <div id="test" style="position:absolute;background:#0094ff;width:10px;height:10px;position:fixed;" data-transition="{'transitions':[{'css':'left','unit':'$Vpx','startY':100,'endY':1000,'startValue':40,'endValue':80,'easing':'easeInOutQuad'},{'c':'top','u':'$Vpx','sY':100,'eY':1000,'sV':40,'eV':180,'e':'easeInOutQuad'}]}"></div>
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
-    a<br />
+
+<div id="wrapper">
+
+  <h2>Beziehung zu anderen Staaten</h2>
+  <div id="st_container">
+    <div id="st_content">
+      <div class="domestic st_de"></div>
+      <div class="foreign st_dn" onclick="fillDescription(0);"></div>
+      <div class="foreign st_gb" onclick="fillDescription(1);"></div>
+      <div class="foreign st_be" onclick="fillDescription(2);"></div>
+      <div class="foreign st_fr" onclick="fillDescription(3);"></div>
+      <div class="foreign st_us" onclick="fillDescription(4);"></div>
+      <div class="foreign st_es" onclick="fillDescription(5);"></div>
+      <div class="foreign st_it" onclick="fillDescription(6);"></div>
+      <div class="foreign st_ou" onclick="fillDescription(7);"></div>
+      <div class="foreign st_jp" onclick="fillDescription(8);"></div>
+      <div class="foreign st_ru" onclick="fillDescription(9);"></div>
+    </div>
+    <div id="st_info">
+      <h3 id="st_name">Deutsches Reich</h3>
+      <p id="st_description">Lorem Ipsum</p>
+    </div>
+  </div>
+
+</div>
+
+<script type="text/javascript">
+  st_build();
+</script>
+
 </body>
+
 </html>
