@@ -1,0 +1,104 @@
+body {
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+}
+
+#wrapper {
+	position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+	width: 100%;
+	min-height: 100%;
+  overflow: hidden;
+}
+
+#st_container {
+  position: relative;
+  height: 480px;
+  width: 100%;
+  background: #f1f1f1;
+}
+
+#st_content {
+  position: absolute;
+  top: 0;
+  left: 32px;
+  bottom: 0;
+  width: 480px;
+}
+
+#st_info {
+  position: absolute;
+  top: 0;
+  left: 546px;
+  right: 0;
+  bottom: 0;
+}
+
+.foreign, .domestic {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 64px;
+  height: 64px;
+  border: 4px solid #fff;
+  border-radius: 50%;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+  .st_de {
+    top: 50%;
+    left: 50%;
+    width: 128px;
+    height: 128px;
+    background-image: url("../img/flags/de.png");
+  }
+
+  .st_dn {
+    background-image: url("../img/flags/dn.png");
+  }
+
+  .st_gb {
+    background-image: url("../img/flags/gb.png");
+  }
+
+  .st_be {
+    background-image: url("../img/flags/be.png");
+  }
+
+  .st_fr {
+    background-image: url("../img/flags/fr.png");
+  }
+
+  .st_us {
+    background-image: url("../img/flags/us.png");
+  }
+
+  .st_es {
+    background-image: url("../img/flags/es.png");
+  }
+
+  .st_it {
+    background-image: url("../img/flags/it.png");
+  }
+
+  .st_ou {
+    background-image: url("../img/flags/ou.png");
+  }
+
+  .st_jp {
+    background-image: url("../img/flags/jp.png");
+  }
+
+  .st_ru {
+    background-image: url("../img/flags/ru.png");
+  }
+
+@media screen and (max-width: 720px) {
+
+}
