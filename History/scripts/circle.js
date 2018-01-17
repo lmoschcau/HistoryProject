@@ -75,7 +75,7 @@ function fillDescription(state) {
     ]
   ];
   
-  if(state > -1) {
+  if(state) {
     document.getElementById("st_name").innerHTML = info[state][0];
     document.getElementById("st_description").innerHTML = info[state][1];
 
