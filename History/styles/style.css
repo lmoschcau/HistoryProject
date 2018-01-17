@@ -134,3 +134,13 @@ body {
         bottom: 0;
         right: 0;
     }
+
+.aniImage {
+    position:absolute;
+    top:0;
+    left:0;
+}
+
+.page {
+    position:relative;
+}
