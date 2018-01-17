@@ -88,6 +88,7 @@ function fillDescription(state) {
   else {
     for (i = 0; i >= elms.length; i++) {
       elms[state].style.backgroundImage = "url('" + info[i][2] + "')";
+      console.log("hui");
     }
   }
 }
