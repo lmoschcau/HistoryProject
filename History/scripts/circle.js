@@ -91,5 +91,3 @@ function fillDescription(state) {
     }
   }
 }
-
-fillDescription(-1);
