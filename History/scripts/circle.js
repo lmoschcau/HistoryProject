@@ -1,3 +1,4 @@
+var elms = document.getElementsByClassName('foreign');
 var st_info = [
     [
       "Dänemark",
@@ -60,11 +61,10 @@ function st_build() {
   var container = document.getElementById('st_content');
     
   $("<div id='domestic' onclick='fillDescription(0);'></div>").appendTo(container);
-  for (var i = i; i < st_info.length + 1; i++) {
+  for (var i = i; i <= st_info.length; i++) {
     $("<div class='foreign' onclick='fillDescription(" + i + ");'></div>").appendTo(container);
+      console.log("hui");
   }
-    
-  var elms = document.getElementsByClassName('foreign');
 
   for (var i = 0; i < st_info.length; i++) {
     elms[i].style.top = 50 - Math.cos(2 * Math.PI / elms.length * i) * 40 + "%";
@@ -74,7 +74,6 @@ function st_build() {
 }
 
 function fillDescription(state) {
-  var elms = document.getElementsByClassName('foreign');
   state--;
   
   document.getElementById("st_name").innerHTML = st_info[state][0];
