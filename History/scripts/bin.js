@@ -3,4 +3,8 @@ function calcFakePages() {
     $("#fakeContent").css("height", (length + "px"));
 }
 
-$(calcFakePages);
+function initBin() {
+    calcFakePages()
+}
+
+$(initBin);
