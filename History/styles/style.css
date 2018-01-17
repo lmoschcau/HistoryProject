@@ -51,12 +51,11 @@ body {
   background-position: center;
 }
 
-  .st_de {
+  .domestic {
     top: 50%;
     left: 50%;
     width: 128px;
     height: 128px;
-    background-image: url("https://i.imgur.com/xtwAATx.png");
   }
 
 @media screen and (max-width: 720px) {
