@@ -1,3 +1,4 @@
+var elms = document.getElementsByClassName('foreign');
 var st_info = [
     [
       "Dänemark",
@@ -73,7 +74,6 @@ function st_build() {
 
 function fillDescription(state) {
   state++;
-  var elms = document.getElementsByClassName('foreign');
   
   document.getElementById("st_name").innerHTML = st_info[state][0];
   document.getElementById("st_description").innerHTML = st_info[state][1];
@@ -81,6 +81,5 @@ function fillDescription(state) {
   for (var i = 0; i < elms.length; i++) {
     elms[i].style.borderColor = "#f1f1f1";
   }
-    elms[state].style.borderColor = "#f00";
-  }
+  elms[state].style.borderColor = "#f00";
 }
