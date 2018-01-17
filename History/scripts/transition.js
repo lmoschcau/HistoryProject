@@ -33,14 +33,14 @@ transition.prototype.isInRange = function (scroll) {
     return ((this.transitionStartScroll < scroll) && (scroll < this.transitionEndScroll));
 }
 
-transition.prototype.absoulte(value) {
+transition.prototype.absoulte = function (value) {
     return (value / 100 * $(window).height());
 }
 
 transition.prototype.updateTransition = function () {
     easingFunction = $.easing[this.easing];
     if (typeof easingFunction === "function") {
-        parameter = [0, ($(document).scrollTop() - this.transitionStartScroll), this.start, (this.end - this.start), (this.transitionEndScroll - this.transitionStartScroll)];
+        parameter = [0, ($(document).scrollTop() - this.absoulte(this.transitionStartScroll)), this.start, (this.end - this.start), (this.absoulte(this.transitionEndScroll) - this.absoulte(this.transitionStartScroll))];
         this.object.style[this.cssStyle] = (this.unit[0] + easingFunction.apply(null, parameter) + this.unit[1]);
     } else { console.error("'" + this.easing + "' is not an easing function") }
 }
