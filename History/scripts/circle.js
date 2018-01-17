@@ -1,23 +1,4 @@
-
-function st_build() {
-  var elmslength = 9;
-  var container = document.getElementById('st_content');
-  
-  for (var i = 0; i < elmslength; i++) {
-    $("<div class='foreign' onclick='fillDescription(" + i + ");'></div>").appendTo(container);
-  }
-  
-  var elms = document.getElementsByClassName('foreign');
-
-  for (var i = 0; i < elmslength; i++) {
-    elms[i].style.top = 50 - Math.cos(2 * Math.PI / elms.length * i) * 40 + "%";
-    elms[i].style.left = 50 - Math.sin(2 * Math.PI / elms.length * i) * 40 + "%";
-  }
-}
-
-function fillDescription(state) {
-  var elms = document.getElementsByClassName('foreign');
-  var info = [
+var st_info = [
     [
       "Dänemark",
       "Dänemark ist muy bien.",
@@ -74,21 +55,31 @@ function fillDescription(state) {
       "https://i.imgur.com/hFb3vxA.png"
     ]
   ];
-  
-  if(state) {
-    document.getElementById("st_name").innerHTML = info[state][0];
-    document.getElementById("st_description").innerHTML = info[state][1];
 
-    for (var i = 0; i < elms.length; i++) {
-      elms[i].style.borderColor = "#f1f1f1";
-    }
-    elms[state].style.borderColor = "#f00";
-  }
+function st_build() {
+  var elmslength = 9;
+  var container = document.getElementById('st_content');
   
-  else {
-    for (i = 0; i >= elms.length; i++) {
-      elms[state].style.backgroundImage = "url('" + info[i][2] + "')";
-      console.log("hui");
-    }
+  for (var i = 0; i < elmslength; i++) {
+    $("<div class='foreign' onclick='fillDescription(" + i + ");'></div>").appendTo(container);
+  }
+
+  for (var i = 0; i < elmslength; i++) {
+    elms[i].style.top = 50 - Math.cos(2 * Math.PI / elms.length * i) * 40 + "%";
+    elms[i].style.left = 50 - Math.sin(2 * Math.PI / elms.length * i) * 40 + "%";
+    elms[i].style.backgroundImage = "url('" + st_info[i][2] + "')";
+  }
+}
+
+function fillDescription(state) {
+  var elms = document.getElementsByClassName('foreign');
+  
+  document.getElementById("st_name").innerHTML = st_info[state][0];
+  document.getElementById("st_description").innerHTML = st_info[state][1];
+
+  for (var i = 0; i < elms.length; i++) {
+    elms[i].style.borderColor = "#f1f1f1";
+  }
+    elms[state].style.borderColor = "#f00";
   }
 }
