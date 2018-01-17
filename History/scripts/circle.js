@@ -27,7 +27,7 @@ var st_info = [
     ],
     [
       "Spanien",
-      "Dänemark ist muy bien.",
+      "Dänemark ist muuuuuuuuuy bien.",
       "https://i.imgur.com/FJxMxav.png"
     ],
     [
@@ -61,10 +61,8 @@ function st_build() {
   var container = document.getElementById('st_content');
     
   $("<div id='domestic' onclick='fillDescription(0);'></div>").appendTo(container);
-    console.log(st_info.length);
-  for (var i = i; i < st_info.length; i++) {
+  for (var i = 0; i < st_info.length; i++) {
     $("<div class='foreign' onclick='fillDescription(" + i + ");'></div>").appendTo(container);
-      console.log("hui");
   }
 
   for (var i = 0; i < st_info.length; i++) {
@@ -75,8 +73,6 @@ function st_build() {
 }
 
 function fillDescription(state) {
-  state--;
-  
   document.getElementById("st_name").innerHTML = st_info[state][0];
   document.getElementById("st_description").innerHTML = st_info[state][1];
 
@@ -85,3 +81,4 @@ function fillDescription(state) {
   }
   elms[state].style.borderColor = "#f00";
 }
+
