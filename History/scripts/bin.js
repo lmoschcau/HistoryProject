@@ -4,7 +4,8 @@ function calcFakePages() {
 }
 
 function initBin() {
-    calcFakePages()
+    calcFakePages();
+    st_build();
 }
 
 $(initBin);
