@@ -1,3 +1,4 @@
+var elms = document.getElementsByClassName('foreign');
 var st_info = [
     [
       "Dänemark",
@@ -71,9 +72,7 @@ function st_build() {
   }
 }
 
-function fillDescription(state) {
-  var elms = document.getElementsByClassName('foreign');
-  
+function fillDescription(state) {  
   document.getElementById("st_name").innerHTML = st_info[state][0];
   document.getElementById("st_description").innerHTML = st_info[state][1];
 
