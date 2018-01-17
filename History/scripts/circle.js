@@ -62,7 +62,7 @@ function st_build() {
     
   $("<div id='domestic' onclick='fillDescription(0);'></div>").appendTo(container);
     console.log(st_info.length);
-  for (var i = i; i <= st_info.length; i++) {
+  for (var i = i; i < st_info.length; i++) {
     $("<div class='foreign' onclick='fillDescription(" + i + ");'></div>").appendTo(container);
       console.log("hui");
   }
