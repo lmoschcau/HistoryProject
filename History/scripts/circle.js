@@ -73,7 +73,7 @@ function st_build() {
 }
 
 function fillDescription(state) {
-  state++;
+  state--;
   
   document.getElementById("st_name").innerHTML = st_info[state][0];
   document.getElementById("st_description").innerHTML = st_info[state][1];
