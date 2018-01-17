@@ -10,6 +10,7 @@
 
     <!-- Plugins -->
     <script type="text/javascript" src="scripts/plugins/jQuery.js"></script>
+    <script type="text/javascript" src="scripts/plugins/easing.js"></script>
 
     <script type="text/javascript" src="scripts/script.js"></script>
     <script type="text/javascript" src="scripts/transition.js"></script>
@@ -62,7 +63,7 @@
             <div id="page1" class="page">
                 <div class="elements">
                     <h2>Beziehung zu anderen Staaten</h2>
-                    <img src="https://i.imgur.com/EcnygJz.png" class="aniImage" data-transition="{'transitions':[{'c':'transform','u':'scale(%V)','sY':0,'eY':100,'sV':1,'eV':1.1,'e':'linear'}]}"/>
+                    <img src="https://i.imgur.com/EcnygJz.png" class="aniImage" data-transition="{'transitions':[{'c':'transform','u':'scale($V)','sY':10,'eY':100,'sV':1,'eV':1.06,'e':'easeInOutCubic'}]}" />
                     <div id="st_container">
                         <div id="st_content">
                             <div class="domestic st_de"></div>
@@ -82,7 +83,7 @@
                             <p id="st_description">Lorem Ipsum</p>
                         </div>
                     </div>
-                    <img src="https://i.imgur.com/xMY9iJB.png" class="aniImage"  data-transition="{'transitions':[{'c':'transform','u':'scale(%V)','sY':0,'eY':100,'sV':1,'eV':1.3,'e':'linear'}]}"/>
+                    <img src="https://i.imgur.com/xMY9iJB.png" class="aniImage" data-transition="{'transitions':[{'c':'transform','u':'scale($V)','sY':10,'eY':100,'sV':1,'eV':1.2,'e':'easeInOutCubic'}]}" />
                 </div>
             </div>
             <div id="page2" class="page">
@@ -94,9 +95,6 @@
         </div>
     </div>
 
-    <div style="position:fixed;width:10px;height:10px;left:0;top:0;background-color:#0094ff;" data-transition="{'transitions':[{'c':'left','u':'%Vpx','sY':50,'eY':100,'sV':0,'eV':100,'e':'linear'}]}">
-
-    </div>
     <div id="fakeContent"></div>
 
 </body>

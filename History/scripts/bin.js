@@ -1,5 +1,5 @@
 function calcFakePages() {
-    var length = $("#pages").children.length * $(window).height();
+    var length = $(".page").length * $(window).height();
     $("#fakeContent").css("height", (length + "px"));
 }
 
