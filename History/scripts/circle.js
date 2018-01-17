@@ -74,16 +74,22 @@ function fillDescription(state) {
       "https://i.imgur.com/hFb3vxA.png"
     ]
   ];
+  
+  if(state > -1) {
+    document.getElementById("st_name").innerHTML = info[state][0];
+    document.getElementById("st_description").innerHTML = info[state][1];
 
-  console.log(info[state][0]);
-  console.log(info[state][1]);
-
-  document.getElementById("st_name").innerHTML = info[state][0];
-  document.getElementById("st_description").innerHTML = info[state][1];
-
-  for (var i = 0; i < elms.length; i++) {
-    elms[i].style.borderColor = "#f1f1f1";
+    for (var i = 0; i < elms.length; i++) {
+      elms[i].style.borderColor = "#f1f1f1";
+    }
+    elms[state].style.borderColor = "#f00";
   }
-  document.getElementsByClassName('foreign')[state].style.borderColor = "#f00";
-  document.getElementsByClassName('foreign')[state].style.backgroundImage = "url('" + info[state][2] + "')";
+  
+  else {
+    for (i = 0; i >= elms.length; i++) {
+      elms[state].style.backgroundImage = "url('" + info[i][2] + "')";
+    }
+  }
 }
+
+fillDescription(-1);
