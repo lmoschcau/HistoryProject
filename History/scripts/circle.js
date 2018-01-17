@@ -1,8 +1,15 @@
 
 function st_build() {
+  var elmslength = 9;
+  var container = document.getElementById('st_content');
+  
+  for (var i = 0; i < elmslength; i++) {
+    $("<div class='foreign' onclick='fillDescription(" + i + ");'></div>").appendTo(container);
+  }
+  
   var elms = document.getElementsByClassName('foreign');
 
-  for (var i = 0; i < elms.length; i++) {
+  for (var i = 0; i < elmslength; i++) {
     elms[i].style.top = 50 - Math.cos(2 * Math.PI / elms.length * i) * 40 + "%";
     elms[i].style.left = 50 - Math.sin(2 * Math.PI / elms.length * i) * 40 + "%";
   }
