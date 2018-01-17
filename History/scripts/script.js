@@ -64,3 +64,5 @@ function fillDescription(state) {
   }
   document.getElementsByClassName('foreign')[state].style.borderColor = "#f00";
 }
+
+$(st_build);
