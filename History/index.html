@@ -22,38 +22,46 @@
 
 <body>
 
-<div id="wrapper">
+    <div id="wrapper">
+        <div id="pages">
+            <div id="page1">
+                <h2>Beziehung zu anderen Staaten</h2>
+                <div id="st_container">
+                    <div id="st_content">
+                        <div class="domestic st_de"></div>
+                        <div class="foreign st_dn" onclick="fillDescription(0);"></div>
+                        <div class="foreign st_gb" onclick="fillDescription(1);"></div>
+                        <div class="foreign st_be" onclick="fillDescription(2);"></div>
+                        <div class="foreign st_fr" onclick="fillDescription(3);"></div>
+                        <div class="foreign st_us" onclick="fillDescription(4);"></div>
+                        <div class="foreign st_es" onclick="fillDescription(5);"></div>
+                        <div class="foreign st_it" onclick="fillDescription(6);"></div>
+                        <div class="foreign st_ou" onclick="fillDescription(7);"></div>
+                        <div class="foreign st_jp" onclick="fillDescription(8);"></div>
+                        <div class="foreign st_ru" onclick="fillDescription(9);"></div>
+                    </div>
+                    <div id="st_info">
+                        <h3 id="st_name">Deutsches Reich</h3>
+                        <p id="st_description">Lorem Ipsum</p>
+                    </div>
+                </div>
+            </div>
+            <div id="page2">
 
-  <h2>Beziehung zu anderen Staaten</h2>
-  <div id="st_container">
-    <div id="st_content">
-      <div class="domestic st_de"></div>
-      <div class="foreign st_dn" onclick="fillDescription(0);"></div>
-      <div class="foreign st_gb" onclick="fillDescription(1);"></div>
-      <div class="foreign st_be" onclick="fillDescription(2);"></div>
-      <div class="foreign st_fr" onclick="fillDescription(3);"></div>
-      <div class="foreign st_us" onclick="fillDescription(4);"></div>
-      <div class="foreign st_es" onclick="fillDescription(5);"></div>
-      <div class="foreign st_it" onclick="fillDescription(6);"></div>
-      <div class="foreign st_ou" onclick="fillDescription(7);"></div>
-      <div class="foreign st_jp" onclick="fillDescription(8);"></div>
-      <div class="foreign st_ru" onclick="fillDescription(9);"></div>
-    </div>
-    <div id="st_info">
-      <h3 id="st_name">Deutsches Reich</h3>
-      <p id="st_description">Lorem Ipsum</p>
-    </div>
-  </div>
+            </div>
+            <div id="pag3">
 
-</div>
+            </div>
+        </div>
+    </div>
 
     <div style="position:fixed;width:10px;height:10px;left:0;top:0;background-color:#0094ff;" data-transition="{'transitions':[{'c':'left','u':'%Vpx','sY':50,'eY':100,'sV':0,'eV':100,'e':'linear'}]}">
 
     </div>
-
-<script type="text/javascript">
-  st_build();
-</script>
+    <div id="fakeContent"></div>
+    <script type="text/javascript">
+        st_build();
+    </script>
 
 </body>
 
