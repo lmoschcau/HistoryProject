@@ -51,53 +51,26 @@ body {
   background-position: center;
 }
 
-  .st_de {
+  .domestic {
     top: 50%;
     left: 50%;
     width: 128px;
     height: 128px;
-    background-image: url("../img/flags/de.png");
+	background-image: url("https://i.imgur.com/xtwAATx.png");
   }
 
-  .st_dn {
-    background-image: url("../img/flags/dn.png");
-  }
+b.hashtag {
+  color: #f40;
+  font-weight: bold;
+}
 
-  .st_gb {
-    background-image: url("../img/flags/gb.png");
-  }
+b.hashtag:hover {
+  color: #f84;
+}
 
-  .st_be {
-    background-image: url("../img/flags/be.png");
-  }
-
-  .st_fr {
-    background-image: url("../img/flags/fr.png");
-  }
-
-  .st_us {
-    background-image: url("../img/flags/us.png");
-  }
-
-  .st_es {
-    background-image: url("../img/flags/es.png");
-  }
-
-  .st_it {
-    background-image: url("../img/flags/it.png");
-  }
-
-  .st_ou {
-    background-image: url("../img/flags/ou.png");
-  }
-
-  .st_jp {
-    background-image: url("../img/flags/jp.png");
-  }
-
-  .st_ru {
-    background-image: url("../img/flags/ru.png");
-  }
+b.hashtag::before {
+  content: '#'
+}
 
 @media screen and (max-width: 720px) {
 
