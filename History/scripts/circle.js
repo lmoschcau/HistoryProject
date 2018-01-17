@@ -63,8 +63,6 @@ function st_build() {
   for (var i = 0; i < elmslength; i++) {
     $("<div class='foreign' onclick='fillDescription(" + i + ");'></div>").appendTo(container);
   }
-  
-  var elms = document.getElementsByClassName('foreign');
 
   for (var i = 0; i < elmslength; i++) {
     elms[i].style.top = 50 - Math.cos(2 * Math.PI / elms.length * i) * 40 + "%";
@@ -78,7 +76,7 @@ function fillDescription(state) {
   
   document.getElementById("st_name").innerHTML = st_info[state][0];
   document.getElementById("st_description").innerHTML = st_info[state][1];
-  
+
   for (var i = 0; i < elms.length; i++) {
     elms[i].style.borderColor = "#f1f1f1";
   }
