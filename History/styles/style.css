@@ -56,7 +56,21 @@ body {
     left: 50%;
     width: 128px;
     height: 128px;
+	background-image: url("https://i.imgur.com/xtwAATx.png");
   }
+
+b.hashtag {
+  color: #f40;
+  font-weight: bold;
+}
+
+b.hashtag:hover {
+  color: #f84;
+}
+
+b.hashtag::before {
+  content: '#'
+}
 
 @media screen and (max-width: 720px) {
 
