@@ -80,6 +80,5 @@ function fillDescription(state) {
   for (var i = 0; i < elms.length; i++) {
     elms[i].style.borderColor = "#f1f1f1";
   }
-    elms[state].style.borderColor = "#f00";
-  }
+  elms[state].style.borderColor = "#f00";
 }
