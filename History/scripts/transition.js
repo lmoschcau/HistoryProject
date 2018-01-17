@@ -33,6 +33,10 @@ transition.prototype.isInRange = function (scroll) {
     return ((this.transitionStartScroll < scroll) && (scroll < this.transitionEndScroll));
 }
 
+transition.prototype.absoulte(value) {
+    return (value / 100 * $(window).height());
+}
+
 transition.prototype.updateTransition = function () {
     easingFunction = $.easing[this.easing];
     if (typeof easingFunction === "function") {
