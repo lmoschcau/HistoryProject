@@ -57,14 +57,13 @@ var st_info = [
   ];
 
 function st_build() {
-  var elmslength = 9;
   var container = document.getElementById('st_content');
   
-  for (var i = 0; i < elmslength; i++) {
+  for (var i = 0; i < st_info.length; i++) {
     $("<div class='foreign' onclick='fillDescription(" + i + ");'></div>").appendTo(container);
   }
 
-  for (var i = 0; i < elmslength; i++) {
+  for (var i = 0; i < st_info.length; i++) {
     elms[i].style.top = 50 - Math.cos(2 * Math.PI / elms.length * i) * 40 + "%";
     elms[i].style.left = 50 - Math.sin(2 * Math.PI / elms.length * i) * 40 + "%";
     elms[i].style.backgroundImage = "url('" + st_info[i][2] + "')";
