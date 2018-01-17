@@ -61,8 +61,8 @@ function st_build() {
   var container = document.getElementById('st_content');
     
   $("<div id='domestic' style='background-image: url('https://i.imgur.com/xtwAATx.png' onclick='fillDescription(0);'></div>").appendTo(container);
-  for (var i = 0; i < st_info.length; i++) {
-    $("<div class='foreign' onclick='fillDescription(" + i + 1 + ");'></div>").appendTo(container);
+  for (var i = 1; i < st_info.length + 1; i++) {
+    $("<div class='foreign' onclick='fillDescription(" + i + ");'></div>").appendTo(container);
   }
 
   for (var i = 0; i < st_info.length; i++) {
