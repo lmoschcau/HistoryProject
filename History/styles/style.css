@@ -1,9 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Lustria|Open+Sans&subset=latin-ext');
+
 body {
   top: 0;
   left: 0;
   right: 0;
   margin: 0;
   padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
 }
 
 #wrapper {
@@ -14,6 +18,32 @@ body {
 	width: 100%;
 	min-height: 100%;
   overflow: hidden;
+}
+
+h1, h2, h3 {
+  font-family: 'Lustria', serif;
+}
+
+h1{}
+
+h2 {
+  font-size: 38px;
+  margin: 0;
+  margin-top: 24px;
+}
+
+h3 {
+  font-size: 32px;
+  margin: 0;
+  margin-top: 24px;
+  margin-bottom: 18px;
+}
+
+p {
+  margin: 0;
+  margin-bottom: 12px;
+  font-size: 20px;
+  line-height: 28px;
 }
 
 #st_container {
@@ -42,9 +72,9 @@ body {
 .foreign, #domestic {
   position: absolute;
   transform: translate(-50%, -50%);
-  width: 64px;
-  height: 64px;
-  border: 4px solid #fff;
+  width: 72px;
+  height: 72px;
+  border: 3px solid #0a8cc9;
   border-radius: 50%;
   background-size: 100%;
   background-repeat: no-repeat;
@@ -54,18 +84,18 @@ body {
   #domestic {
     top: 50%;
     left: 50%;
-    width: 128px;
-    height: 128px;
-	background-image: url("https://i.imgur.com/xtwAATx.png");
+    width: 136px;
+    height: 136px;
+	  background-image: url("https://i.imgur.com/xtwAATx.png");
   }
 
 b.hashtag {
-  color: #f40;
+  color: #0a8cc9;
   font-weight: bold;
 }
 
 b.hashtag:hover {
-  color: #f84;
+  color: #44a4e4;
 }
 
 b.hashtag::before {
