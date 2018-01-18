@@ -98,25 +98,48 @@ b.hashtag::before {
 
 
 #nav {
-    position:fixed;
-    width:128px;
-    height:100%;
+    left: calc(16px - 128px);
+    position: fixed;
+    width: 128px;
+    height: 100%;
+    z-index: 101;
+    transition: all ease-in-out 0.4s;
 }
 
-#nav > ul {
-    display:flex;
-    flex-direction:column;
-    flex-wrap:nowrap;
-    height:100%;
-    margin:0;
-    padding:0;
-    list-style:none;
-}
+    #nav:hover {
+        left: 0;
+    }
 
-#nav > ul > li {
-    flex-grow:1;
-    position:relative;
-}
+    #nav > ul {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+        #nav > ul > li {
+            flex-grow: 1;
+            position: relative;
+            background: #2c2c2c;
+        }
+
+            #nav > ul > li::after {
+                content: "";
+                height: 100%;
+                position: absolute;
+                right: 0;
+                width: 16px;
+                display: block;
+                background-color: #3356aa;
+                transition: all ease-in-out 0.2s;
+            }
+
+            #nav > ul > li:hover::after {
+                width: 100%;
+            }
 
     #nav li > div {
         height: 128px;
