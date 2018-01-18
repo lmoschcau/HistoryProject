@@ -39,7 +39,7 @@ body {
   bottom: 0;
 }
 
-.foreign, .domestic {
+.foreign, #domestic {
   position: absolute;
   transform: translate(-50%, -50%);
   width: 64px;
@@ -51,7 +51,7 @@ body {
   background-position: center;
 }
 
-  .domestic {
+  #domestic {
     top: 50%;
     left: 50%;
     width: 128px;
