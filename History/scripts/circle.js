@@ -65,18 +65,20 @@ function st_build() {
   var container = document.getElementById('st_content');
     
   $("<div id='domestic' onclick='fillDescription(0);'></div>").appendTo(container);
-  for (var i = 1; i <= st_info.length; i++) {
+  for (var i = 1; i < st_info.length; i++) {
     $("<div class='foreign' onclick='fillDescription(" + i + ");'></div>").appendTo(container);
   }
 
   for (var i = 0; i < elms.length; i++) {
     elms[i].style.top = 50 - Math.cos(2 * Math.PI / elms.length * i) * 40 + "%";
     elms[i].style.left = 50 - Math.sin(2 * Math.PI / elms.length * i) * 40 + "%";
-    elms[i].style.backgroundImage = "url('" + st_info[i][2] + "')";
+    elms[i].style.backgroundImage = "url('" + st_info[i + 1][2] + "')";
   }
 }
 
 function fillDescription(state) {
+  state--;
+    
   document.getElementById("st_name").innerHTML = st_info[state][0];
   document.getElementById("st_description").innerHTML = st_info[state][1];
 
