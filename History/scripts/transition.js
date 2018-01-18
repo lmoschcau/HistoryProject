@@ -34,7 +34,7 @@ transition.prototype.isInRange = function (scroll) {
 }
 
 transition.prototype.absolute = function (value) {
-    return (value / 100 * $(window).height());
+    return (value / 50 * $(window).height());
 }
 
 transition.prototype.updateTransition = function () {

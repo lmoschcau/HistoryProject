@@ -235,6 +235,7 @@ b.hashtag::before {
   display: inline;
   opacity: 0.75;
   margin-left: 24px;
+  z-index:1000;
 }
 
 #sourcePanel {

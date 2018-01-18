@@ -7,7 +7,7 @@ function initBin() {
 $(initBin);
 
 function calcFakePages() {
-    var length = $(".page").length * $(window).height();
+    var length = $(".page").length * $(window).height() * 2;
     $("#fakeContent").css("height", (length + "px"));
 }
 
