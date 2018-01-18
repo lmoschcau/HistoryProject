@@ -2,7 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\History",
-    "\\History\\scripts"
+    "\\History\\scripts",
+    "\\History\\scripts\\plugins",
+    "\\History\\styles"
   ],
+  "SelectedNode": "\\History\\scripts\\circle.js",
   "PreviewInSolutionExplorer": false
 }
