@@ -5,6 +5,17 @@ function calcFakePages() {
 
 function initBin() {
     calcFakePages();
+    st_build();
+}
+
+$(initBin);
+function calcFakePages() {
+    var length = $(".page").length * $(window).height();
+    $("#fakeContent").css("height", (length + "px"));
+}
+
+function initBin() {
+    calcFakePages();
     $("[data-source]").click(function () { showSource(this) });
 }
 
