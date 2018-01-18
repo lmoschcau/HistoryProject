@@ -164,6 +164,14 @@ b.hashtag::before {
     top:0;
 }
 
+.sourceInfo {
+  height: 24px;
+  width: 24px;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+
 #sourcePanel {
     z-index: 1000;
     background-color: rgba(27, 27, 27, 1);

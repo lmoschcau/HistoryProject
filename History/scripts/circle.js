@@ -84,7 +84,7 @@ function st_build() {
 function fillDescription(state) {
   $( "#st_name" ).html(st_info[state][0]); // changes <h3>
   $( "#st_description" ).html(st_info[state][1]); // fill <p> content
-  document.getElementById("st_description").setAttribute("data-source", st_info[state][3]); // set source
+  document.getElementById("st_source").setAttribute("data-source", st_info[state][3]); // set source
     
   state--;
   for (var i = 0; i < elms.length; i++) {
