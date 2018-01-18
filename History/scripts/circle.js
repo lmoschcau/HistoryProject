@@ -79,7 +79,8 @@ function st_build() {
 function fillDescription(state) {
   document.getElementById("st_name").innerHTML = st_info[state][0];
   document.getElementById("st_description").innerHTML = st_info[state][1];
-
+    
+  state--;
   for (var i = 0; i < elms.length; i++) {
     elms[i].style.borderColor = "#f1f1f1";
   }
