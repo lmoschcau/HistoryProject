@@ -34,13 +34,15 @@ var st_info = [ // [0]: name, [1]: content, [2]: image-url
     ],
     [
       "Spanien",
-      "Dänemark ist muuuuuuuuuy bien.",
-      "https://i.imgur.com/FJxMxav.png"
+      "Kaiser Friedrich Wilhelm II. forderte für die Deutschen einen <b class='hashtag'>PlatzAnDerSonne</b>. Durch seine Politik geriet er mit Spanien in Konflikt. Der Deutsch-Spanische Vertrag aus dem Jahr 1899 zwang Spanien die Karolinen, die nördlichen Marianen und Palau an Deutschland abzutreten. Die im Pazifik liegenden Südsee-Gebiete bildeten danach einen Teil Deutsch-Neuguineas.",
+      "https://i.imgur.com/FJxMxav.png",
+      "https://de.wikipedia.org/wiki/Deutsch-spanische_Beziehungen"
     ],
     [
       "Italien",
-      "Dänemark ist muy bien.",
-      "https://i.imgur.com/Q7H7GFv.png"
+      "Durch den Rücktritt von Bismark 1890 ist der italienische Ministerpräsident <b class='hashtag'>Crispi</b> geschwächt. Nach dem Sturtz Crispis möchte Italien die fortschreitende Entfremdung zwischen Großbritannien und dem Deutschen Reich nicht mittragen. Nur noch die Konservativen hielten noch zum Dreibund. Jm Jahr 1913 stieg die Auswanderungen, in die Nachbarstaaten wie zum Beispiel das Deutsche Reich, Schweiz und Österreich-Ungarn, auf bis zu 872.000 Menschen an.",
+      "https://i.imgur.com/Q7H7GFv.png",
+      "Gernert et al.(2016)"
     ],
     [
       "Osmanisches Reich",
@@ -63,7 +65,7 @@ var st_info = [ // [0]: name, [1]: content, [2]: image-url
     [
       "Russland",
       "Bismarcks Bündisse mit Russland durch den <b class='hashtag'>Dreikaiserbund</b> und Rückversicherzungsvertrag wurden durch Wilhelm II. nicht mehr erneuert. Auf der Suche nach einem neuen Bündnispartner näherte sich das Zarenreich schließlich Frankreich und Großbritannien an. Der frühere Bündnispartner war ab 1892 nun mit Frankreich verbündet.",
-      "https://i.imgur.com/hFb3vxA.png",
+      "https://i.imgur.com/WoarLFR.png",
       "https://de.wikipedia.org/wiki/Deutsch-russische_Beziehungen<br>http://www.geschichtsforum.de/thema/verhaeltnis-deutsches-kaiserreich-und-russland.14260/"
     ]
   ];
