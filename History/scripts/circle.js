@@ -24,8 +24,9 @@ var st_info = [ // [0]: name, [1]: content, [2]: image-url
     ],
     [
       "USA",
-      "Dänemark ist muy bien.",
-      "https://i.imgur.com/GvPjJXO.png"
+      "Deutsche, wie sie eben sind, organisieren sich gerne in Vereinen und Gruppen, so ist es auch nicht verwunderlich, dass es deutsche Einwanderer waren, die Ende des 19. Jahrhunderts in den USA die ersten Gewerkschaften gründeten. Als stärkste Einwanderergruppe hatten sie generell einen großen Einfluss in Amerika. Jedoch eigentlich hatte in die USA am Ende des 19. Jahrhundert kein Interesse an politischen Beziehungen, sondern achtete vielmehr auf das politische Gleichgewicht innerhalb Europas. Als aber das geeinte Deutsche Reich mehr in der Europapolitik mitmischen wollte, kam es schnell zu wirtschaftlichen und flottenpolitischen Konflikten, wieder einmal hatte Wilhelm II. genau das erreicht, was er mit seiner Flottenpolitik hatte erreichen wollen, zu provozieren, doch mit seiner zunehmenden Macht wurde er von Übersee aus immer misstrauischer beäugt. <b class='hashtag'>HaltDenBallFlach</b>",
+      "https://i.imgur.com/GvPjJXO.png",
+      "http://www.wissen.de/lexikon/europaeisches-gleichgewicht<br>https://usa.usembassy.de/dabeziehungen0139.htm<br>https://de.m.wikipedia.org/wiki/Beziehungen_zwischen_Deutschland_und_den_Vereinigten_Staaten"
     ],
     [
       "Spanien",

@@ -30,3 +30,9 @@ function toggleOverlay(state) {
         $("#sourcePanel")[0].style.display = "none";
     }
 }
+
+function scrollTo(destination) {
+    $('html, body').animate({
+        scrollTop: $(destination).offset().top
+    }, 3000);
+}

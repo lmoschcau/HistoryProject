@@ -31,7 +31,7 @@ h1{
   transform: translateX(-50%);
   padding: 24px;
   margin: 0;
-  border: 4px solid black;
+  border: 6px solid black;
 }
 
 h2 {
@@ -128,9 +128,9 @@ b.hashtag::before {
 
 
 #nav {
-    left: calc(16px - 128px);
+    left: calc(16px - 184px);
     position: fixed;
-    width: 128px;
+    width: 184px;
     height: 100%;
     z-index: 101;
     transition: all ease-in-out 0.4s;
@@ -157,7 +157,7 @@ b.hashtag::before {
         }
     #nav span {
         position: absolute;
-        width: 128px;
+        width: 184px;
         height: 100%;
         right: 0;
         text-align: center;
