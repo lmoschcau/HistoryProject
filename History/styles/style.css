@@ -139,9 +139,22 @@ b.hashtag::before {
             position: relative;
             background: #2c2c2c;
         }
+    #nav span {
+        position: absolute;
+        width: 128px;
+        height: 100%;
+        right: 0;
+        text-align: center;
+        vertical-align: middle;
+    }
+    #nav div > div span {
+        color: #2c2c2c;
+    }
+    #nav li > div > span {
+        color: #3356aa;
+    }
 
-            #nav > ul > li::after {
-                content: "";
+            #nav > ul > li > div div {
                 height: 100%;
                 position: absolute;
                 right: 0;
@@ -149,14 +162,15 @@ b.hashtag::before {
                 display: block;
                 background-color: #3356aa;
                 transition: all ease-in-out 0.2s;
+                overflow:hidden;
             }
 
-            #nav > ul > li:hover::after {
+            #nav > ul > li:hover > div  div {
                 width: 100%;
             }
 
     #nav li > div {
-        height: 128px;
+        height: 100%;
         margin: auto;
         position: absolute;
         top: 0;
