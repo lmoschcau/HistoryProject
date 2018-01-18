@@ -153,3 +153,45 @@ b.hashtag::before {
     width:100%;
     height:100%;
 }
+
+#overlay {
+    width:100%;
+    height:100%;
+    position:fixed;
+    background:rgba(46, 46, 46, 0.21);
+    z-index:1000;
+    left:0;
+    top:0;
+}
+
+#sourcePanel {
+    z-index: 1000;
+    background-color: rgba(27, 27, 27, 1);
+    border: 1px solid white;
+    transform: translate(50%,calc(-100% - 4px));
+    color:white;
+    padding:2px;
+    font-size:0.7rem;
+}
+    #sourcePanel::after {
+        content:"";
+        height: 0;
+        width: 0;
+        position: absolute;
+        border: 8px solid;
+        border-color: rgba(27, 27, 27, 1) transparent transparent transparent;
+        top:100%;
+        left:50%;
+        transform:translateX(-50%);
+    }
+    #sourcePanel::before {
+        content: "";
+        height: 0;
+        width: 0;
+        position: absolute;
+        border: 10px solid;
+        border-color: #fff transparent transparent transparent;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
