@@ -10,9 +10,11 @@
 
     <!-- Plugins -->
     <script type="text/javascript" src="scripts/plugins/jQuery.js"></script>
+    <script type="text/javascript" src="scripts/plugins/easing.js"></script>
 
     <script type="text/javascript" src="scripts/circle.js"></script>
     <script type="text/javascript" src="scripts/transition.js"></script>
+    <script type="text/javascript" src="scripts/bin.js"></script>
 
     <meta name="author" content="Max Zimmermann">
     <meta name="description" content="">
@@ -22,27 +24,67 @@
 
 <body>
 
-<div id="wrapper">
+    <div id="wrapper">
+        <div id="nav">
+            <ul>
+                <li>
+                    <div>
 
-  <h2>Beziehung zu anderen Staaten</h2>
-  <div id="st_container">
-    <div id="st_content">
+                    </div>
+                </li>
+                <li>
+                    <div>
+
+                    </div>
+                </li>
+                <li>
+                    <div>
+
+                    </div>
+                </li>
+                <li>
+                    <div>
+
+                    </div>
+                </li>
+                <li>
+                    <div>
+
+                    </div>
+                </li>
+                <li>
+                    <div>
+
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div id="pages">
+            <div id="page1" class="page">
+                <div class="elements">
+                    <h2>Beziehung zu anderen Staaten</h2>
+                    <img src="https://i.imgur.com/EcnygJz.png" class="aniImage" data-transition="{'transitions':[{'c':'transform','u':'scale($V)','sY':10,'eY':100,'sV':1,'eV':1.06,'e':'easeInOutCubic'}]}" />
+                    <div id="st_container">
+                        <div id="st_content">
+                        </div>
+                        <div id="st_info">
+                            <h3 id="st_name">Deutsches Reich</h3>
+                            <p id="st_description">Lorem Ipsum</p>
+                        </div>
+                    </div>
+                    <img src="https://i.imgur.com/xMY9iJB.png" class="aniImage" data-transition="{'transitions':[{'c':'transform','u':'scale($V)','sY':10,'eY':100,'sV':1,'eV':1.2,'e':'easeInOutCubic'}]}" />
+                </div>
+            </div>
+            <div id="page2" class="page">
+
+            </div>
+            <div id="page3" class="page">
+
+            </div>
+        </div>
     </div>
-    <div id="st_info">
-      <h3 id="st_name">Deutsches Reich</h3>
-      <p id="st_description">Lorem Ipsum</p>
-    </div>
-  </div>
 
-</div>
-
-    <div style="position:fixed;width:10px;height:10px;left:0;top:0;background-color:#0094ff;" data-transition="{'transitions':[{'c':'left','u':'%Vpx','sY':50,'eY':100,'sV':0,'eV':100,'e':'linear'}]}">
-
-    </div>
-
-<script type="text/javascript">
-  st_build();
-</script>
+    <div id="fakeContent"></div>
 
 </body>
 
