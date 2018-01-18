@@ -34,3 +34,12 @@ function toggleOverlay(state) {
 function pageScroll(destination) {
     window.scrollTo(0, destination * $(window).height());
 }
+
+function slideShow() {
+    for (var i = 0; i < $(document).height(); i + 500) {
+        setTimeout( function() {
+            window.scrollTo(0, i);
+        }, 50);
+        console.log(i);
+    }
+}
