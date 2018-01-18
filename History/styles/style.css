@@ -167,19 +167,19 @@ b.hashtag::before {
 .sourceInfo {
   height: 24px;
   width: 24px;
-  position: absolute;
-  top: 12px;
-  right: 12px;
+  position: relative;
+  display: inline;
+  opacity: 0.75;
 }
 
 #sourcePanel {
     z-index: 1000;
     background-color: rgba(27, 27, 27, 1);
-    border: 1px solid white;
-    transform: translate(50%,calc(-100% - 4px));
+    transform: translate(-50%,calc(-100% - 8px));
     color:white;
-    padding:2px;
-    font-size:0.7rem;
+    padding: 4px;
+    font-size: 0.7rem;
+    opacity: 0.9;
 }
     #sourcePanel::after {
         content:"";
@@ -191,15 +191,4 @@ b.hashtag::before {
         top:100%;
         left:50%;
         transform:translateX(-50%);
-    }
-    #sourcePanel::before {
-        content: "";
-        height: 0;
-        width: 0;
-        position: absolute;
-        border: 10px solid;
-        border-color: #fff transparent transparent transparent;
-        top: 100%;
-        left: 50%;
-        transform: translateX(-50%);
     }

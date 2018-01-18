@@ -12,7 +12,7 @@ var st_info = [ // [0]: name, [1]: content, [2]: image-url
     ],
     [
       "Großbritannien",
-      "Zuerst die Krüger-Depesche 1896, dann die Daily-Telegraph-Affäre 1908 oder der Wettlauf um Afrika 1998 - kurzum, die Stimmung zwischen Großbritannien und Deutschland war so angespannt, dass sie bis 1914 nicht gelöst werden konnte. Doch der letzte Schliff, der letzte Stich ins englische Herz waren 1898/1900 die Flottengesetzte. Zwar stand vorher schon fest, dass Deutschland die Briten nicht würde einholen können, doch zumindest eine Flotte entstehen zu lassen, die berücksichtigt werden müsste, eine „Risikoflotte“, war das Ziel. Wilhelm II. hatte durch seine teils nahe, mütterliche Verwandtschaft in England immer das Gefühl sich beweisen zu müssen und dies versuchte er auch. Zusammenfassend kann gesagt werden, dass je mehr Flottenrüstung sich in Deutschland entwickelte, desto schlechter wurde das Verhältnis zwischen Deutschland und Großbritannien. <b class='hashtag'>StopItWithTheShipsAlready</b>",
+      "Zuerst die Krüger-Depesche 1896, dann die Daily-Telegraph-Affäre 1908 oder der Wettlauf um Afrika 1898 - kurzum, die Stimmung zwischen Großbritannien und Deutschland war so angespannt, dass sie bis 1914 nicht gelöst werden konnte. Doch der letzte Schliff, der letzte Stich ins englische Herz waren 1898/1900 die Flottengesetzte. Zwar stand vorher schon fest, dass Deutschland die Briten nicht würde einholen können, doch zumindest eine Flotte entstehen zu lassen, die berücksichtigt werden müsste, eine „Risikoflotte“, war das Ziel. Wilhelm II. hatte durch seine teils nahe, mütterliche Verwandtschaft in England immer das Gefühl sich beweisen zu müssen und dies versuchte er auch. Zusammenfassend kann gesagt werden, dass je mehr Flottenrüstung sich in Deutschland entwickelte, desto schlechter wurde das Verhältnis zwischen Deutschland und Großbritannien. <b class='hashtag'>StopItWithTheShipsAlready</b>",
       "https://i.imgur.com/MlYmMbt.png",
       "https://stephanherold.com/Recht_PDF/WilhelmII.pdf<br>https://de.m.wikipedia.org/wiki/Britisch-deutsche_Beziehungen"
     ],
@@ -57,12 +57,14 @@ var st_info = [ // [0]: name, [1]: content, [2]: image-url
     [
       "Japan",
       "Japans Beziehung mit dem Deutschen Reich wurde seit der Reichsgründung gut gepflegt. Nach dem ersten Chinesisch-Japanischen Krieg kühlten die Beziehungen jedoch ab. Kohlelieferungen nach Russland während des Russisch-Japanischen Krieges, sowie der in Europa und Amerika populären Rassismus gegenüber fernöstlichen Ethnien in Form der <b class='hashtag'>gelbenGefahr</b> belasteten die Verbindung weiter.",
-      "https://i.imgur.com/XSmYsVT.png"
+      "https://i.imgur.com/XSmYsVT.png",
+      "Deutschland - Japan : historische Kontakte / hrsg. von Josef Kreiner",
     ],
     [
       "Russland",
       "Bismarcks Bündisse mit Russland durch den <b class='hashtag'>Dreikaiserbund</b> und Rückversicherzungsvertrag wurden durch Wilhelm II. nicht mehr erneuert. Auf der Suche nach einem neuen Bündnispartner näherte sich das Zarenreich schließlich Frankreich und Großbritannien an. Der frühere Bündnispartner war ab 1892 nun mit Frankreich verbündet.",
-      "https://i.imgur.com/hFb3vxA.png"
+      "https://i.imgur.com/hFb3vxA.png",
+      "https://de.wikipedia.org/wiki/Deutsch-russische_Beziehungen<br>http://www.geschichtsforum.de/thema/verhaeltnis-deutsches-kaiserreich-und-russland.14260/"
     ]
   ];
 
