@@ -17,11 +17,6 @@ var st_info = [ // [0]: name, [1]: content, [2]: image-url
       "https://stephanherold.com/Recht_PDF/WilhelmII.pdf<br>https://de.m.wikipedia.org/wiki/Britisch-deutsche_Beziehungen"
     ],
     [
-      "Belgien",
-      "Dänemark ist muy bien.",
-      "https://i.imgur.com/PN5Nx87.png"
-    ],
-    [
       "Frankreich",
       "Der deutsche Sieg über Frankreich von 1871 prägte die Beziehung der beiden Länder über Dekaden. Die Franzosen waren nicht bloß aufgrund der militärischen Niederlage, Annexion von Elsass-Lothringen oder Reparationen in Höhe von 5 Mrd. Francs, sondern der Proklamation des deutschen Kaisers inmitten Frankreichs - in Versailles - wegen erbost.<br>Ein neuer Meilenstein in der deutsch-französischen Erbfeindschaft wurde erreicht.<br><b class='hashtag'>bringBackElsassLothringen</b>",
       "https://i.imgur.com/bGlIKFr.png",
