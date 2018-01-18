@@ -1,6 +1,10 @@
 var elms = document.getElementsByClassName('foreign');
 var st_info = [
     [
+      "Deutsches Reich",
+      "Das Deutsche Reich..."
+    ],
+    [
       "Dänemark",
       "Dänemark ist muy bien.",
       "https://i.imgur.com/tM1qHOF.png"
@@ -61,11 +65,11 @@ function st_build() {
   var container = document.getElementById('st_content');
     
   $("<div id='domestic' onclick='fillDescription(0);'></div>").appendTo(container);
-  for (var i = 0; i < st_info.length; i++) {
+  for (var i = 1; i <= st_info.length; i++) {
     $("<div class='foreign' onclick='fillDescription(" + i + ");'></div>").appendTo(container);
   }
 
-  for (var i = 0; i < st_info.length; i++) {
+  for (var i = 0; i < elms.length; i++) {
     elms[i].style.top = 50 - Math.cos(2 * Math.PI / elms.length * i) * 40 + "%";
     elms[i].style.left = 50 - Math.sin(2 * Math.PI / elms.length * i) * 40 + "%";
     elms[i].style.backgroundImage = "url('" + st_info[i][2] + "')";
