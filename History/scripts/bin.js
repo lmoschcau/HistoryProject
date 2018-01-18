@@ -13,7 +13,7 @@ function calcFakePages() {
 
 function showSource(obj) {
     var source = obj.getAttribute("data-source");
-    if (source != "") {
+    if (source.length >= 0) {
         $("#sourcePanel").html(source);
         $("#sourcePanel")[0].style.top = $(obj).offset().top - $(window).scrollTop() + "px";
         $("#sourcePanel")[0].style.left = (($(obj).offset().left - $(window).scrollLeft()) + ($(obj).width() / 2) + "px");
