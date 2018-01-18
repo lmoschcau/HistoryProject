@@ -60,7 +60,6 @@ p {
   position: relative;
   height: 480px;
   width: 100%;
-  background: #f1f1f1;
 }
 
 #st_content {
@@ -84,21 +83,26 @@ p {
   padding-right: 32px;
 }
 
+#st_source {
+  margin: 0;
+}
+
 .foreign, #domestic {
   position: absolute;
   transform: translate(-50%, -50%);
   width: 72px;
   height: 72px;
-  border: 3px solid #0a8cc9;
+  border: 3px solid #3356aa;
   border-radius: 50%;
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
   filter: saturate(80%);
+  opacity: 0.75;
 }
 
   .foreign:hover {
-    filter: brightness(110%);
+    filter: brightness(130%);
   }
 
   #domestic {
@@ -110,12 +114,12 @@ p {
   }
 
 b.hashtag {
-  color: #0a8cc9;
+  color: #3356aa;
   font-weight: bold;
 }
 
 b.hashtag:hover {
-  color: #44a4e4;
+  filter: brightness(130%);
 }
 
 b.hashtag::before {
@@ -208,8 +212,9 @@ b.hashtag::before {
 }
 
 .elements {
-    margin: 16px;
+    padding: 16px;
     margin-bottom: 96px;
+    background: #fff8;
 }
 
 #overlay {
@@ -228,6 +233,7 @@ b.hashtag::before {
   position: relative;
   display: inline;
   opacity: 0.75;
+  margin-left: 24px;
 }
 
 #sourcePanel {
