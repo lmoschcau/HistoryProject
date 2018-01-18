@@ -7,12 +7,14 @@ var st_info = [ // [0]: name, [1]: content, [2]: image-url
     [
       "Dänemark",
       "Falls das Deutsche Reich Dänemark im Zuge der Eroberung der <b class='hashtag'>Küsten</b> besetzen sollte, würde Dänemark dem Deutschen Reich den Krieg erklären. 1866 hat Dänemark im Deutsch-Dänischen Krieg mit Schleswig und Holstein genug Land verloren, eine weitere Schmach wollte Dänemark nicht erneut zulassen.",
-      "https://i.imgur.com/tM1qHOF.png"
+      "https://i.imgur.com/tM1qHOF.png",
+      "https://de.wikipedia.org/wiki/D%C3%A4nisch-deutsche_Beziehungen<br>https://www.welt.de/politik/ausland/article9115012/Vor-146-Jahren-waere-Daenemark-fast-deutsch-geworden.html<br>https://www.planet-wissen.de/kultur/metropolen/kopenhagen/pwiediedeutschenunddiedaenen100.html"
     ],
     [
       "Großbritannien",
       "Zuerst die Krüger-Depesche 1896, dann die Daily-Telegraph-Affäre 1908 oder der Wettlauf um Afrika 1998 - kurzum, die Stimmung zwischen Großbritannien und Deutschland war so angespannt, dass sie bis 1914 nicht gelöst werden konnte. Doch der letzte Schliff, der letzte Stich ins englische Herz waren 1898/1900 die Flottengesetzte. Zwar stand vorher schon fest, dass Deutschland die Briten nicht würde einholen können, doch zumindest eine Flotte entstehen zu lassen, die berücksichtigt werden müsste, eine „Risikoflotte“, war das Ziel. Wilhelm II. hatte durch seine teils nahe, mütterliche Verwandtschaft in England immer das Gefühl sich beweisen zu müssen und dies versuchte er auch. Zusammenfassend kann gesagt werden, dass je mehr Flottenrüstung sich in Deutschland entwickelte, desto schlechter wurde das Verhältnis zwischen Deutschland und Großbritannien. <b class='hashtag'>StopItWithTheShipsAlready</b>",
-      "https://i.imgur.com/MlYmMbt.png"
+      "https://i.imgur.com/MlYmMbt.png",
+      "https://stephanherold.com/Recht_PDF/WilhelmII.pdf<br>https://de.m.wikipedia.org/wiki/Britisch-deutsche_Beziehungen"
     ],
     [
       "Belgien",
@@ -22,7 +24,8 @@ var st_info = [ // [0]: name, [1]: content, [2]: image-url
     [
       "Frankreich",
       "Der deutsche Sieg über Frankreich von 1871 prägte die Beziehung der beiden Länder über Dekaden. Die Franzosen waren nicht bloß aufgrund der militärischen Niederlage, Annexion von Elsass-Lothringen oder Reparationen in Höhe von 5 Mrd. Francs, sondern der Proklamation des deutschen Kaisers inmitten Frankreichs - in Versailles - wegen erbost.<br>Ein neuer Meilenstein in der deutsch-französischen Erbfeindschaft wurde erreicht.<br><b class='hashtag'>bringBackElsassLothringen</b>",
-      "https://i.imgur.com/bGlIKFr.png"
+      "https://i.imgur.com/bGlIKFr.png",
+      "Wanderausstellung „Erbfeinde-Erbfreunde“, Deutsch-Französisches Institut"
     ],
     [
       "USA",
@@ -42,12 +45,14 @@ var st_info = [ // [0]: name, [1]: content, [2]: image-url
     [
       "Osmanisches Reich",
       "Bereits kurz nach der Gründung des Deutschen Reiches wandte sich Sultan Abdülhamid II an Bismarck. Er sah sein Reich durch die Kolonialbestrebungen Frankreichs, Englands, Russlands und Italiens im Orient bedroht.<br>Erste Kooperationen entstanden in militärischen Bereichen. Der Sultan beauftragte deutsche Firmen, seine desolate Armee durch deutsche Waffentechnologie auf Vordermann zu bringen.<br>Der wirtschaftliche Einfluss breitete sich so stark aus, dass deutsche Unternehmen auf dem türkischen Markt Monopolstellungen erreichen konnten. Außerdem realisierten diese Unternehmen die bedeutendsten türkischen Projekte dieser Zeit, wie den Bau der Bagdadbahn oder den der Anatolischen Bahn.<br><b class='hashtag'>Wirtschaftsmonopol</b>",
-      "https://i.imgur.com/DiobqqK.png"
+      "https://i.imgur.com/DiobqqK.png",
+      "Peter Philipp Werner, Vorgeschichte I: Osmanisch-deutsche Verflechtungen vor 1915"
     ],
     [
       "Österreich-Ungarn",
       "Österreich-Ungarn ist seit dem 1879 geschlossenen <b class='hashtag'>Zweibund</b> der engste Verbündete des Deutschen Reichs. Im Laufe der Zeit verlor Österreich-Ungarn militärische und wirtschaftliche Unabhängigkeit und wurde außenpolitisch vom Deutschen Reich abhängig. Schon nach dem Deutschen Krieg 1866 war klar, dass Preussen die Vorherrschaft übernehmen würde.",
-      "https://i.imgur.com/GreMppX.png"
+      "https://i.imgur.com/GreMppX.png",
+      "https://www.dhm.de/lemo/kapitel/kaiserreich/aussenpolitik.html<br>http://ww1.habsburger.net/de/entwicklungen/oesterreich-ungarn-und-deutschland-komplizierte-wechselwirkungen"
     ],
     [
       "Japan",
@@ -79,6 +84,7 @@ function st_build() {
 function fillDescription(state) {
   $( "#st_name" ).html(st_info[state][0]); // changes <h3>
   $( "#st_description" ).html(st_info[state][1]); // fill <p> content
+  document.getElementById("st_description").setAttribute("data-source", st_info[state][3]); // set source
     
   state--;
   for (var i = 0; i < elms.length; i++) {
