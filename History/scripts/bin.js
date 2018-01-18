@@ -31,8 +31,6 @@ function toggleOverlay(state) {
     }
 }
 
-function scrollTo(destination) {
-    $('html, body').animate({
-        scrollTop: $(destination).offset().top
-    }, 3000);
+function pageScroll(destination) {
+    window.scrollTo(0, destination * $(window).height());
 }

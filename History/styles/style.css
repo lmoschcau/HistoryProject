@@ -31,7 +31,8 @@ h1{
   transform: translateX(-50%);
   padding: 24px;
   margin: 0;
-  border: 6px solid black;
+  color: whitesmoke;
+  border: 6px solid whitesmoke;
 }
 
 h2 {
