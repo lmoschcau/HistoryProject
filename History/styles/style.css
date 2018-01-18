@@ -215,6 +215,7 @@ b.hashtag::before {
 .elements {
     padding: 16px;
     margin-bottom: 96px;
+    position:relative;
     background: #fff8;
 }
 
