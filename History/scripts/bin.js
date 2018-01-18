@@ -31,8 +31,15 @@ function toggleOverlay(state) {
     }
 }
 
-function scrollTo(destination) {
-    $('html, body').animate({
-        scrollTop: $(destination).offset().top
-    }, 3000);
+function pageScroll(destination) {
+    window.scrollTo(0, destination * $(window).height());
+}
+
+function slideShow() {
+    for (var i = 0; i < $(document).height(); i + 500) {
+        setTimeout( function() {
+            window.scrollTo(0, i);
+        }, 50);
+        console.log(i);
+    }
 }
