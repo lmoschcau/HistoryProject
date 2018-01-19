@@ -175,20 +175,21 @@ b.hashtag::before {
         color: #3356aa;
     }
 
-            #nav > ul > li > div div {
-                height: 100%;
-                position: absolute;
-                right: 0;
-                width: 16px;
-                display: block;
-                background-color: #3356aa;
-                transition: all ease-in-out 0.2s;
-                overflow:hidden;
-            }
+    #nav > ul > li > div div {
+        height: 100%;
+        position: absolute;
+        right: 0;
+        width: 16px;
+        display: block;
+        background-color: #3356aa;
+        transition: all cubic-bezier(.5,.5,0,1) 0.8s;
+        overflow: hidden;
+    }
 
-            #nav > ul > li:hover > div  div {
-                width: 100%;
-            }
+    #nav > ul > li:hover > div div {
+        width: 100%;
+        transition: all cubic-bezier(.5,.5,0,1) 0.4s;
+    }
 
     #nav li > div {
         height: 100%;
