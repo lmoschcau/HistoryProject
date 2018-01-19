@@ -34,7 +34,7 @@ transition.prototype.isInRange = function (scroll) {
 }
 
 transition.prototype.absolute = function (value) {
-    return (value / 50 * $(window).height());
+    return (value / (100/2) * $(window).height());
 }
 
 transition.prototype.updateTransition = function () {
@@ -45,12 +45,28 @@ transition.prototype.updateTransition = function () {
 }
 
 function update() {
-    for (var i = 0; i < transitions.list.length; i++) {
-        if (transitions.list[i].isInRange($(document).scrollTop())) {
-            transitions.list[i].updateTransition();
+    if (flag) {
+        for (var i = 0; i < transitions.list.length; i++) {
+            if (transitions.list[i].isInRange($(document).scrollTop())) {
+                transitions.list[i].updateTransition();
+            }
         }
     }
     requestAnimationFrame(update);
+}
+
+function updateFix() {
+    scroll = $(document).scrollTop();
+    for (var i = 0; i < transitions.list.length; i++) {
+        var cur = transitions.list[i];
+        if (cur.absolute(cur.transitionStartScroll) > scroll) {
+            cur.object.style[cur.cssStyle] = (cur.unit[0] + cur.start + cur.unit[1]);
+        }
+        if (cur.absolute(cur.transitionEndScroll) < scroll) {
+            cur.object.style[cur.cssStyle] = (cur.unit[0] + cur.end + cur.unit[1]);
+
+        }
+    }
 }
 
 function init() {
@@ -58,3 +74,16 @@ function init() {
     update();
 }
 $(init);
+
+var timer, flag = false;
+$(window).scroll(function () {
+    if (!flag) {
+        flag = true;
+    }
+    clearTimeout(timer);
+    timer = setTimeout(function () {
+        flag = false;
+    }, 200);
+});
+
+setInterval(updateFix, 500);
