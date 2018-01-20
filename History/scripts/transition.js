@@ -25,8 +25,18 @@ var transitions = {
                 transitions.addTransition(objects[i], returnOne(cu.c, cu.css), returnOne(cu.u, cu.unit), returnOne(cu.sY, cu.startY), returnOne(cu.eY, cu.endY), returnOne(cu.sV, cu.startValue), returnOne(cu.eV, cu.endValue), returnOne(cu.e, cu.easing)); //call transitions.addTransition() to add transition
             }
         }
+    },
+    checkForDublicates: function () {
+        for (var i = 0; i < this.list.length; i++) {
+            for (var d = 0; d < this.list.length; d++) {
+                if ((this.list[i].object == this.list[d].object) && (this.list[i].cssStyle == this.list[d].cssStyle) && i != d) {
+                    this.list[i].dublicate = d;
+                }
+            }
+        }
     }
 };
+
 function transition(object, cssStyle, unit, transitionStartScroll, transitionEndScroll, start, end, easing) { // define transition object
     this.object = object;
     this.cssStyle = cssStyle;
@@ -36,9 +46,17 @@ function transition(object, cssStyle, unit, transitionStartScroll, transitionEnd
     this.start = start;
     this.end = end;
     this.easing = easing; // easing function from easing.js
+    this.dublicate;
 }
+
 transition.prototype.isInRange = function (scroll) { // check if the specific transition has to get animated
     return ((this.absolute(this.transitionStartScroll) < scroll) && (scroll < this.absolute(this.transitionEndScroll)));
+}
+
+transition.prototype.elementIsNotInbetween = function (id, scroll) {
+    if ((scroll < this.absolute(transitions.list[id].transitionEndScroll) < this.absolute(this.transitionStartScroll)) || (this.absolute(this.transitionEndScroll) > this.absolute(transitions.list[id].transitionStartScroll) > scroll)) {
+        return false;
+    } else { console.log("hh"); return true }
 }
 
 transition.prototype.absolute = function (value) { // convert from % to px
@@ -66,12 +84,18 @@ function update() { // call updateTransition() on every transition in Range on r
 function updateFix() { // fix elements wich are misplaced because of steps skipped while scrolling and are out of range
     scroll = $(document).scrollTop(); // get global scroll
     for (var i = 0; i < transitions.list.length; i++) { // iterate trough all transitions
+        var nothingBlocking = true;
         var cur = transitions.list[i]; // set short variable
-        if (cur.absolute(cur.transitionStartScroll) > scroll) { // check if scroll is below transitionStartScroll
-            cur.object.style[cur.cssStyle] = (cur.unit[0] + cur.start + cur.unit[1]); // apply and combine value with unit
+        if (cur.dublicate != null) {
+            nothingBlocking = cur.elementIsNotInbetween(cur.dublicate, $(document).scrollTop());
         }
-        if (cur.absolute(cur.transitionEndScroll) < scroll) { // check if scroll is above transitionEndScroll
-            cur.object.style[cur.cssStyle] = (cur.unit[0] + cur.end + cur.unit[1]); // apply and combine value with unit
+        if (nothingBlocking) {
+            if (cur.absolute(cur.transitionStartScroll) > scroll) { // check if scroll is below transitionStartScroll
+                cur.object.style[cur.cssStyle] = (cur.unit[0] + cur.start + cur.unit[1]); // apply and combine value with unit
+            }
+            if (cur.absolute(cur.transitionEndScroll) < scroll) { // check if scroll is above transitionEndScroll
+                cur.object.style[cur.cssStyle] = (cur.unit[0] + cur.end + cur.unit[1]); // apply and combine value with unit
+            }
 
         }
     }
@@ -79,6 +103,7 @@ function updateFix() { // fix elements wich are misplaced because of steps skipp
 
 function init() { // initalize combined function
     transitions.addTransitionsAutomatic(); // initally add transitions automatic
+    transitions.checkForDublicates();
     update(); // start update() cicle
 }
 $(init); // call init() once dom is ready to be manipulated
