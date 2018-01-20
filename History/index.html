@@ -23,7 +23,123 @@
 </head>
 
 <body>
+    <style>
+        #loading {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: 1000;
+            background-color: #2c2c2c;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
 
+            #loading > div {
+                width: 1000px;
+                margin: auto;
+            }
+        #loadingOverflow {
+            overflow: hidden;
+            width: 1000px;
+            transition: all ease-in-out 1s;
+        }
+            #loadingOverflow > div {
+                text-align: center;
+                width: 1000px;
+            }
+
+            #loading div#loadingBars {
+                position: relative;
+                height: 128px;
+                display: inline-block;
+            }
+
+                #loading div#loadingBars::after {
+                    content: "";
+                    width: calc(100% + 2 * 64px);
+                    height: 1px;
+                    display: block;
+                    position: absolute;
+                    left: 50%;
+                    bottom: -1px;
+                    transform: translateX(-50%);
+                    background: #c6c6c6;
+                }
+
+                #loading div#loadingBars > span {
+                    display: inline-block;
+                    position: relative;
+                    width: 128px;
+                    height: 100%;
+                    margin: 0 4px;
+                }
+
+            #loading span > span {
+                content: "";
+                display: block;
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                height: 0;
+                background: repeating-linear-gradient(45deg, transparent 0,transparent 16px,rgba(255, 255, 255, 0.04) 16px, rgba(255, 255, 255, 0.04) 32px);
+                vertical-align: top;
+                border: 1px solid;
+                border-bottom-width: 4px;
+                box-sizing: border-box;
+            }
+
+                #loading span > span.ani {
+                    animation: infinite 1.8s ani;
+                }
+
+        @keyframes ani {
+            0% {
+                height: 0%;
+            }
+
+            25% {
+                height: 0%;
+            }
+
+            85% {
+                height: 100%;
+            }
+
+            100% {
+                height: 0%;
+            }
+        }
+    </style>
+    <div id="loading">
+        <div>
+            <div id="loadingOverflow">
+                <div>
+                    <div id="loadingBars">
+                        <span>
+                            <span class="ani" style="border-color:#a63d17;animation-delay:0s;">
+                            </span>
+                        </span><span>
+                            <span class="ani" style="border-color:#424a66;animation-delay:0.3s;">
+                            </span>
+                        </span><span>
+                            <span class="ani" style="border-color:#8d5e30;animation-delay:0.6s;">
+                            </span>
+                        </span><span>
+                            <span class="ani" style="border-color:#e28a1e;animation-delay:0.9s;">
+                            </span>
+                        </span><span>
+                            <span class="ani" style="border-color:#d7c097;animation-delay:1.2s;">
+                            </span>
+                        </span><span>
+                            <span class="ani" style="border-color:#718444;animation-delay:1.5s;">
+                            </span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div id="wrapper">
         <div id="nav">
             <ul>
@@ -56,7 +172,7 @@
         </div>
         <div id="pages">
             <div id="page6" class="page">
-                <img src="https://i.imgur.com/ezNoO9u.jpg" class="aniImage" data-transition="{'transitions':[{'c':'transform','u':'scale($V)','sY':500,'eY':600,'sV':1,'eV':1.2,'e':'easeInOutCubic'},{'c':'top','u':'$V%','sY':500,'eY':600,'sV':0,'eV':-20,'e':'easeInOutCubic'}]}" style="width:100%;"/>
+                <img src="https://i.imgur.com/ezNoO9u.jpg" class="aniImage" data-transition="{'transitions':[{'c':'transform','u':'scale($V)','sY':500,'eY':600,'sV':1,'eV':1.2,'e':'easeInOutCubic'},{'c':'top','u':'$V%','sY':500,'eY':600,'sV':0,'eV':-20,'e':'easeInOutCubic'}]}" style="width:100%;" />
                 <div class="elements" data-transition="{'transitions':[{'c':'top','u':'$V%','sY':500,'eY':600,'sV':0,'eV':20,'e':'easeInOutCubic'}]}">
                     <h2>Kolonialismus</h2>
                     <p>
@@ -86,7 +202,8 @@
             <div id="page4" class="page" style="z-index:1;opacity:0;" data-transition="{'transitions':[{'c':'opacity','u':'$V','sY':300,'eY':310,'sV':0,'eV':1,'e':'easeOutQuad'},{'c':'right','u':'$V%','sY':380,'eY':400,'sV':0,'eV':-120,'e':'easeInQuad'}]}">
                 <div class="elements" data-transition="{'transitions':[{'c':'top','u':'$V%','sY':300,'eY':380,'sV':0,'eV':5,'e':'easeInOutQuad'}]}">
                     <h2>Auswirkungen aufs Inland</h2>
-                    <p>Die neue außenpolitische Ausrichtung des Kaisers spiegelte sich in der Bevölkerung wider.
+                    <p>
+                        Die neue außenpolitische Ausrichtung des Kaisers spiegelte sich in der Bevölkerung wider.
                         Konservative Parteien und Verbände wie der Alldeutsche Verband, der seinerzeit als die einflussreichste Organisation aus den Reihen des Volkes wahrgenommen wurde, dienten der Distribution der neuen global-politischen Selbstwahrnehmung des Reiches. Nicht zuletzt durch Propaganda konnten sich Militarismus und Nationalismus, geprägt von imperialistischen und expansionistischen Bestandteilen, in der Bevölkerung etablieren. Demokratisierungs- und Liberalisierungsbestrebungen blieben hingegen auf der Strecke.
                         Das wohl bekannteste Beispiel für militaristisches Gedankengut in der Bevölkerung war der Matrosenanzug und stand mit dem Aufbau der Flotte in Verbindung. Die maritime Begeisterung der Erwachsenen übertrug sich in diesem Beispiel auf die Kinder, um 1900 hatte fast jedes Kind im Kaiserreich einen Matrosenanzug.
                         Selbstverständlich nahm der Flottenausbau Einfluss auf die Wirtschaft; zum Anfang des Ersten Weltkrieges standen 175 Schiffe in Dienst. Fachwissen aus anderen Wirtschaftszweigen wie der Elektrotechnik fand Anwendung und umgekehrt konnte Know-how zahlreicher (Schiffs-) Konstrukteure in anderen Wirtschaftsbereichen angewandt werden.
@@ -94,9 +211,9 @@
                     <img class="sourceInfo" src="images/info.svg" data-source="Klaus-Peter Merta, 2004, Der Flottenbau, Deutsches Historisches Museum<br>https://de.wikipedia.org/wiki/Kaiserliche_Marine#cite_ref-7">
                 </div>
             </div>
-            <div id="page3" class="page"data-transition="{'transitions':[{'c':'top','u':'$V%','sY':395,'eY':400,'sV':0,'eV':-150,'e':'easeInQuad'}]}">
-                <img src="https://i.imgur.com/V3y369D.png" class="aniImage" data-transition="{'transitions':[{'c':'transform','u':'scale($V)','sY':200,'eY':400,'sV':1,'eV':1.06,'e':'easeInOutCubic'},{'c':'top','u':'$V%','sY':380,'eY':400,'sV':0,'eV':-200,'e':'easeInOutCubic'}]}" style="width:100%;"/>
-                <img src="https://i.imgur.com/rVg9hHo.png" class="aniImage" data-transition="{'transitions':[{'c':'transform','u':'scale($V)','sY':200,'eY':400,'sV':1,'eV':1.1,'e':'easeInOutCubic'},{'c':'left','u':'$V%','sY':375,'eY':400,'sV':0,'eV':-110,'e':'easeInOutCubic'}]}"style="width:100%;" />
+            <div id="page3" class="page" data-transition="{'transitions':[{'c':'top','u':'$V%','sY':395,'eY':400,'sV':0,'eV':-150,'e':'easeInQuad'}]}">
+                <img src="https://i.imgur.com/V3y369D.png" class="aniImage" data-transition="{'transitions':[{'c':'transform','u':'scale($V)','sY':200,'eY':400,'sV':1,'eV':1.06,'e':'easeInOutCubic'},{'c':'top','u':'$V%','sY':380,'eY':400,'sV':0,'eV':-200,'e':'easeInOutCubic'}]}" style="width:100%;" />
+                <img src="https://i.imgur.com/rVg9hHo.png" class="aniImage" data-transition="{'transitions':[{'c':'transform','u':'scale($V)','sY':200,'eY':400,'sV':1,'eV':1.1,'e':'easeInOutCubic'},{'c':'left','u':'$V%','sY':375,'eY':400,'sV':0,'eV':-110,'e':'easeInOutCubic'}]}" style="width:100%;" />
 
                 <div class="elements" data-transition="{'transitions':[{'c':'top','u':'$V%','sY':230,'eY':290,'sV':0,'eV':5,'e':'easeInQuad'},{'c':'top','u':'$V%','sY':290,'eY':300,'sV':5,'eV':15,'e':'easeInOutQuad'},{'c':'opacity','u':'$V','sY':290,'eY':300,'sV':1,'eV':0,'e':'easeInOutQuad'}]}">
                     <h2>Auswirkungen der Außenpolitik auf das Ausland</h2>
@@ -107,29 +224,29 @@
                     </p>
                     <img class="sourceInfo" src="images/info.svg" data-source="http://geschichtsverein-koengen.de/WilhelmZwei.htm<br>https://www.dhm.de/lemo/kapitel/kaiserreich/aussenpolitik.html<br>http://www.geschichte-abitur.de/deutsches-kaiserreich/ausenpolitik<br>https://kuangdazou.wordpress.com/2013/06/20/das-weltmachtstreben-wilhelm-ii-die-dt-ausenpolitik-verandert-europa/">
                 </div>
-                <img src="https://i.imgur.com/C3kPnPq.png" class="aniImage" data-transition="{'transitions':[{'c':'transform','u':'scale($V)','sY':200,'eY':400,'sV':1,'eV':1.2,'e':'easeInOutCubic'},{'c':'left','u':'$V%','sY':375,'eY':400,'sV':0,'eV':-110,'e':'easeInOutCubic'}]}" style="width:100%;"/>
+                <img src="https://i.imgur.com/C3kPnPq.png" class="aniImage" data-transition="{'transitions':[{'c':'transform','u':'scale($V)','sY':200,'eY':400,'sV':1,'eV':1.2,'e':'easeInOutCubic'},{'c':'left','u':'$V%','sY':375,'eY':400,'sV':0,'eV':-110,'e':'easeInOutCubic'}]}" style="width:100%;" />
             </div>
             <div id="page2" class="page" style="z-index:10;right:-100%;" data-transition="{'transitions':[{'c':'right','u':'$V%','sY':100,'eY':120,'sV':-100,'eV':0,'e':'easeInOutCubic'},{'c':'opacity','u':'$V','sY':190,'eY':200,'sV':1,'eV':0,'e':'easeInOutCubic'}]}">
                 <div class="elements">
                     <h2>Beziehung zu anderen Staaten</h2>
-                         <div id="st_container">
-                             <div id="st_content"></div>
-                                 <div id="st_info">
-                                    <h3 id="st_name">Außenpolitik des Deutschen Reich</h3>
-                                    <p id="st_description">Bitte wählen Sie ein Land aus um mehr über es zu erfahren.</p>
-                                    <img id="st_source" class="sourceInfo" src="images/info.svg" data-source="" style="display: none;">
-                                    </div>
-                                <div>
-                            </div>
+                    <div id="st_container">
+                        <div id="st_content"></div>
+                        <div id="st_info">
+                            <h3 id="st_name">Außenpolitik des Deutschen Reich</h3>
+                            <p id="st_description">Bitte wählen Sie ein Land aus um mehr über es zu erfahren.</p>
+                            <img id="st_source" class="sourceInfo" src="images/info.svg" data-source="" style="display: none;">
                         </div>
-                 </div>
+                        <div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div id="page1" class="page"data-transition="{'transitions':[{'c':'top','u':'$V%','sY':190,'eY':200,'sV':0,'eV':-100,'e':'easeInOutCubic'}]}" style="overflow:hidden">
-                <img src="https://i.imgur.com/BhemW7j.jpg" class="aniImage" data-transition="{'transitions':[{'c':'top','u':'$V%','sY':0,'eY':200,'sV':0,'eV':-22,'e':'easeInOutCubic'}]}" style="width:100%"/>
+            <div id="page1" class="page" data-transition="{'transitions':[{'c':'top','u':'$V%','sY':190,'eY':200,'sV':0,'eV':-100,'e':'easeInOutCubic'}]}" style="overflow:hidden">
+                <img src="https://i.imgur.com/BhemW7j.jpg" class="aniImage" data-transition="{'transitions':[{'c':'top','u':'$V%','sY':0,'eY':200,'sV':0,'eV':-22,'e':'easeInOutCubic'}]}" style="width:100%" />
                 <div class="elements" style="height: 50%; background: none;" data-transition="{'transitions':[{'c':'opacity','u':'$V','sY':30,'eY':60,'sV':1,'eV':0,'e':'easeInOutCubic'}]}">
                     <h1>Die Außenpolitik Wilhem II.</h1>
                 </div>
-                <div class="elements" style="position:relative;"data-transition="{'transitions':[{'c':'bottom','u':'$V%','sY':30,'eY':100,'sV':0,'eV':30,'e':'easeInOutCubic'},{'c':'bottom','u':'$V%','sY':100,'eY':110,'sV':30,'eV':160,'e':'easeInCubic'}]}">
+                <div class="elements" style="position:relative;" data-transition="{'transitions':[{'c':'bottom','u':'$V%','sY':30,'eY':100,'sV':0,'eV':30,'e':'easeInOutCubic'},{'c':'bottom','u':'$V%','sY':100,'eY':110,'sV':30,'eV':160,'e':'easeInCubic'}]}">
                     <h2>Außenpolitik allgemein</h2>
                     <p>
                         Als Wilhelm II im Juni 1888 die Kaiserwürde annahm, befanden sich die europäischen Mächte im „Hochimperialismus“. Demnach zeichnete sich ein Wandel der Mentalität der deutschen Rolle in der Welt - also der Außenpolitik ab.<br>

@@ -1,5 +1,4 @@
 function initBin() { // initalize combined function
-    calcFakePages(); // call calcFakePages()
     st_build(); // call st_build() inside circle.js
     $("[data-source]").click(function () { showSource(this) }); // apply click event to all source elements (Quellen)
 }
@@ -39,3 +38,15 @@ function slideShow() {
 function pageScroll(destination, speed) { // scroll to destination
     $('html, body').animate({ scrollTop: (destination * $(window).height() * scrollFactor) + 200 }, speed); // scroll to destination (page number) * window height * scrollFactor + 200 (fix) (in speed ms)
 };
+$(window).bind("load", function () {
+    var barsCount = 6; // total amount of bars on the loading screen
+    $(".ani").one("animationiteration webkitAnimationIteration", function () { // set eventhandler to the bars (on iteration of animation css)
+        $(this).removeClass("ani"); // remove class ani to prevent animation from running again
+        barsCount--; // remove one from bars count
+        if (barsCount == 0) { // if all bars are inactive
+            setTimeout(function () { $("#loadingOverflow").css("width", "0px") }, 300); // fade out loading bar
+            setTimeout(function () { $("#loading").fadeOut(400) }, 1300); // fade out the loading panel
+        }
+    });
+    calcFakePages(); // call calcFakePages()
+});
