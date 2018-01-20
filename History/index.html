@@ -27,24 +27,31 @@
     <div id="wrapper">
         <div id="nav">
             <ul>
-                <li onclick="pageScroll(0)">
+                <li onclick="pageScroll(0, 4000)">
                     <div><span style="color: #a63d17;">Allgemein</span><div style="background-color: #a63d17;"><span>Allgemein</span></div></div>
                 </li>
-                <li onclick="pageScroll(1)">
+                <li onclick="pageScroll(1, 4000)">
                     <div><span style="color: #424a66;">Beziehungen</span><div style="background-color: #424a66;"><span>Beziehungen</span></div></div>
                 </li>
-                <li onclick="pageScroll(2)">
+                <li onclick="pageScroll(2, 4000)">
                     <div><span style="color: #8d5e30;">Auswirkungen Ausland</span><div style="background-color: #8d5e30;"><span>Auswirkungen Ausland</span></div></div>
                 </li>
-                <li onclick="pageScroll(3)">
+                <li onclick="pageScroll(3, 4000)">
                     <div><span style="color: #e28a1e;">Auswirkungen Inland</span><div style="background-color: #e28a1e;"><span>Auswirkungen Inland</span></div></div>
                 </li>
-                <li onclick="pageScroll(4)">
+                <li onclick="pageScroll(4, 4000)">
                     <div><span style="color: #d7c097;">Flottenpolitik</span><div style="background-color: #d7c097;"><span>Flottenpolitik</span></div></div>
                 </li>
-                <li onclick="pageScroll(5)">
+                <li onclick="pageScroll(5, 4000)">
                     <div><span style="color: #718444;">Kolonien</span><div style="background-color: #718444;"><span>Kolonien</span></div></div>
                 </li>
+            </ul>
+        </div>
+        <div id="tools">
+            <ul>
+                <li onclick="pageScroll(5, 10000)" style="perspective-origin:150% 0%;color:#498563;" data-help="springe zum Ende der Seite"><div id="svgJT"><svg class="icon" width="64" height="64" viewBox="0,0,64,64"><path d="M 12, 24 L 32, 44 L 52, 24"></path></svg><div><svg class="icon" width="64" height="64" viewBox="0,0,64,64"><path d="M 12, 24 L 32, 44 L 52, 24"></path></svg></div></div></li>
+                <li onclick="slideShow()" style="perspective-origin:50% 0%;color:#4c7286;" data-help="starte die Slideshow"><div id="svgP"><svg class="icon" width="64" height="64" viewBox="0,0,64,64"><path d="M 17, 12 L 53, 32 L 17, 52 Z"></path></svg><div><svg class="icon" width="64" height="64" viewBox="0,0,64,64"><path d="M 17, 12 L 53, 32 L 17, 52 Z"></path></svg></div></div></li>
+                <li onclick="pageScroll(0, 10000)" style="perspective-origin:-50% 0%;color:#505f89;" data-help="springe zum Anfang der Seite"><div id="svgJB"><svg class="icon" width="64" height="64" viewBox="0,0,64,64"><path d="M 12, 44 L 32, 24 L 52, 44"></path></svg><div><svg class="icon" width="64" height="64" viewBox="0,0,64,64"><path d="M 12, 44 L 32, 24 L 52, 44"></path></svg></div></div></li>
             </ul>
         </div>
         <div id="pages">

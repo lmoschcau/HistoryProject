@@ -36,6 +36,6 @@ function slideShow() {
     $('html, body').animate({ scrollTop: $("#fakeContent").height() }, 60000); // scroll to the bottom (fakeContent height) of the page (in 60000ms(=60s))
 }
 
-function pageScroll(destination) { // scroll to destination
-    $('html, body').animate({ scrollTop: (destination * $(window).height() * scrollFactor) + 200 }, 3000); // scroll to destination (page number) * window height * scrollFactor + 200 (fix) (in 3000ms(=3s))
+function pageScroll(destination, speed) { // scroll to destination
+    $('html, body').animate({ scrollTop: (destination * $(window).height() * scrollFactor) + 200 }, speed); // scroll to destination (page number) * window height * scrollFactor + 200 (fix) (in speed ms)
 };
