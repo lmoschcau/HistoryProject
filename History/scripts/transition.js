@@ -1,8 +1,10 @@
 scrollFactor = 2; // devide speed by Factor
 /*
+===================================== general =========================================================
 all transitions. methods deal with the administration of transitions
-
 all transition. methods deal with the manipulation of HTML elements trough transitions
+===================================== function ========================================================
+this procedure only works with a maximum of two transitions of the same type (cssStyle) on one object
 
  */
 
@@ -26,11 +28,11 @@ var transitions = {
             }
         }
     },
-    checkForDublicates: function () {
-        for (var i = 0; i < this.list.length; i++) {
-            for (var d = 0; d < this.list.length; d++) {
-                if ((this.list[i].object == this.list[d].object) && (this.list[i].cssStyle == this.list[d].cssStyle) && i != d) {
-                    this.list[i].dublicate = d;
+    checkForDublicates: function () { // check if another transition of same type is asigned for the same object
+        for (var i = 0; i < this.list.length; i++) { // iterate trough all objects
+            for (var d = 0; d < this.list.length; d++) { // iterate trough all objects again to compare them
+                if ((this.list[i].object == this.list[d].object) && (this.list[i].cssStyle == this.list[d].cssStyle) && i != d) { // if there is a dublicate
+                    this.list[i].dublicate = d; // set dublicate
                 }
             }
         }
@@ -46,17 +48,17 @@ function transition(object, cssStyle, unit, transitionStartScroll, transitionEnd
     this.start = start;
     this.end = end;
     this.easing = easing; // easing function from easing.js
-    this.dublicate;
+    this.dublicate; // same transition type on same object
 }
 
 transition.prototype.isInRange = function (scroll) { // check if the specific transition has to get animated
     return ((this.absolute(this.transitionStartScroll) < scroll) && (scroll < this.absolute(this.transitionEndScroll)));
 }
 
-transition.prototype.elementIsNotInbetween = function (id, scroll) {
-    if ((scroll < this.absolute(transitions.list[id].transitionEndScroll) < this.absolute(this.transitionStartScroll)) || (this.absolute(this.transitionEndScroll) > this.absolute(transitions.list[id].transitionStartScroll) > scroll)) {
-        return false;
-    } else { console.log("hh"); return true }
+transition.prototype.elementIsNotInbetween = function (id, scroll) { // check if there is another object between scroll and the this object
+    if ((scroll < this.absolute(transitions.list[id].transitionEndScroll) < this.absolute(this.transitionStartScroll)) || (this.absolute(this.transitionEndScroll) > this.absolute(transitions.list[id].transitionStartScroll) > scroll)) { // check for positive or negative
+        return false; // there is a element inbetween (false not)
+    } else { return true; } // there is no element inbetween (not)
 }
 
 transition.prototype.absolute = function (value) { // convert from % to px
@@ -84,12 +86,12 @@ function update() { // call updateTransition() on every transition in Range on r
 function updateFix() { // fix elements wich are misplaced because of steps skipped while scrolling and are out of range
     scroll = $(document).scrollTop(); // get global scroll
     for (var i = 0; i < transitions.list.length; i++) { // iterate trough all transitions
-        var nothingBlocking = true;
+        var nothingBlocking = true; // as a default there is no element blocking
         var cur = transitions.list[i]; // set short variable
-        if (cur.dublicate != null) {
-            nothingBlocking = cur.elementIsNotInbetween(cur.dublicate, $(document).scrollTop());
+        if (cur.dublicate != null) { // if there is an dublicate transition check for blocking elements
+            nothingBlocking = cur.elementIsNotInbetween(cur.dublicate, $(document).scrollTop()); // check for the dublicate object
         }
-        if (nothingBlocking) {
+        if (nothingBlocking) { // if nothing is blocking
             if (cur.absolute(cur.transitionStartScroll) > scroll) { // check if scroll is below transitionStartScroll
                 cur.object.style[cur.cssStyle] = (cur.unit[0] + cur.start + cur.unit[1]); // apply and combine value with unit
             }

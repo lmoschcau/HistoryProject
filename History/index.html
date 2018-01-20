@@ -42,7 +42,7 @@
         #loadingOverflow {
             overflow: hidden;
             width: 1000px;
-            transition: all ease-in-out 1s;
+            transition: all ease-in-out 0.4s;
         }
             #loadingOverflow > div {
                 text-align: center;
@@ -90,7 +90,7 @@
             }
 
                 #loading span > span.ani {
-                    animation: infinite 1.8s ani;
+                    animation: infinite 0.9s ani;
                 }
 
         @keyframes ani {
@@ -117,22 +117,22 @@
                 <div>
                     <div id="loadingBars">
                         <span>
-                            <span class="ani" style="border-color:#a63d17;animation-delay:0s;">
+                            <span class="ani" style="border-color:#a63d17;animation-delay:0.15s;">
                             </span>
                         </span><span>
-                            <span class="ani" style="border-color:#424a66;animation-delay:0.3s;">
+                            <span class="ani" style="border-color:#424a66;animation-delay:0.30s;">
                             </span>
                         </span><span>
-                            <span class="ani" style="border-color:#8d5e30;animation-delay:0.6s;">
+                            <span class="ani" style="border-color:#8d5e30;animation-delay:0.45s;">
                             </span>
                         </span><span>
-                            <span class="ani" style="border-color:#e28a1e;animation-delay:0.9s;">
+                            <span class="ani" style="border-color:#e28a1e;animation-delay:0.60s;">
                             </span>
                         </span><span>
-                            <span class="ani" style="border-color:#d7c097;animation-delay:1.2s;">
+                            <span class="ani" style="border-color:#d7c097;animation-delay:0.75s;">
                             </span>
                         </span><span>
-                            <span class="ani" style="border-color:#718444;animation-delay:1.5s;">
+                            <span class="ani" style="border-color:#718444;animation-delay:0.90s;">
                             </span>
                         </span>
                     </div>
@@ -226,7 +226,7 @@
                 </div>
                 <img src="https://i.imgur.com/C3kPnPq.png" class="aniImage" data-transition="{'transitions':[{'c':'transform','u':'scale($V)','sY':200,'eY':400,'sV':1,'eV':1.2,'e':'easeInOutCubic'},{'c':'left','u':'$V%','sY':375,'eY':400,'sV':0,'eV':-110,'e':'easeInOutCubic'}]}" style="width:100%;" />
             </div>
-            <div id="page2" class="page" style="z-index:10;right:-100%;" data-transition="{'transitions':[{'c':'right','u':'$V%','sY':100,'eY':120,'sV':-100,'eV':0,'e':'easeInOutCubic'},{'c':'opacity','u':'$V','sY':190,'eY':200,'sV':1,'eV':0,'e':'easeInOutCubic'}]}">
+            <div id="page2" class="page" style="z-index:10;right:-100%;" data-transition="{'transitions':[{'c':'right','u':'$V%','sY':100,'eY':120,'sV':-100,'eV':0,'e':'easeInOutCubic'},{'c':'opacity','u':'$V','sY':190,'eY':200,'sV':1,'eV':0,'e':'easeInOutCubic'},{'c':'right','u':'$V%','sY':200,'eY':210,'sV':0,'eV':-100,'e':'easeInOutCubic'}]}">
                 <div class="elements">
                     <h2>Beziehung zu anderen Staaten</h2>
                     <div id="st_container">
@@ -264,7 +264,11 @@
     <div>
         <div id="overlay" onclick="toggleOverlay(false);" style="display:none"></div>
         <div id="panels">
-            <div id="sourcePanel" style="position:fixed"></div>
+            <div>
+                <div id="sourcePanel" style="position:fixed"></div>
+                <div id="sourcePointer"></div>
+            </div>
+            
         </div>
     </div>
 
