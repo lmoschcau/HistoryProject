@@ -2,7 +2,7 @@ var elms = document.getElementsByClassName("foreign");
 var st_info = [ // [0]: name, [1]: content, [2]: image-url
     [
       "Außenpolitik des Deutschen Reiches",
-      "Bitte wählen Sie ein Land aus um mehr über es zu erfahren."
+      "Bitte wählen Sie ein Land aus, um mehr über es zu erfahren."
     ],
     [
       "Dänemark",
@@ -12,7 +12,7 @@ var st_info = [ // [0]: name, [1]: content, [2]: image-url
     ],
     [
       "Großbritannien",
-      "Zuerst die Krüger-Depesche 1896, dann die Daily-Telegraph-Affäre 1908 oder der Wettlauf um Afrika 1898 - kurzum, die Stimmung zwischen Großbritannien und Deutschland war so angespannt, dass sie bis 1914 nicht gelöst werden konnte. Doch der letzte Schliff, der letzte Stich ins englische Herz waren 1898/1900 die Flottengesetzte. Zwar stand vorher schon fest, dass Deutschland die Briten nicht würde einholen können, doch zumindest eine Flotte entstehen zu lassen, die berücksichtigt werden müsste, eine „Risikoflotte“, war das Ziel. Wilhelm II. hatte durch seine teils nahe, mütterliche Verwandtschaft in England immer das Gefühl sich beweisen zu müssen und dies versuchte er auch. Zusammenfassend kann gesagt werden, dass je mehr Flottenrüstung sich in Deutschland entwickelte, desto schlechter wurde das Verhältnis zwischen Deutschland und Großbritannien. <b class='hashtag'>StopItWithTheShipsAlready</b>",
+      "Zuerst die Krüger-Depesche 1896, dann die Daily-Telegraph-Affäre 1908 oder der Wettlauf um Afrika 1898 - kurzum, die Stimmung zwischen Großbritannien und Deutschland war so angespannt, dass sie bis 1914 nicht gelöst werden konnte. Doch der letzte Schliff, der letzte Stich ins englische Herz waren 1898/1900 die Flottengesetze. Zwar stand vorher schon fest, dass Deutschland die Briten nicht würde einholen können, doch zumindest eine Flotte entstehen zu lassen, die berücksichtigt werden müsste, eine „Risikoflotte“, war das Ziel. Wilhelm II. hatte durch seine teils nahe, mütterliche Verwandtschaft in England immer das Gefühl sich beweisen zu müssen und dies versuchte er auch. Zusammenfassend kann gesagt werden, dass je mehr Flottenrüstung sich in Deutschland entwickelte, desto schlechter wurde das Verhältnis zwischen Deutschland und Großbritannien. <b class='hashtag'>StopItWithTheShipsAlready</b>",
       "https://i.imgur.com/MlYmMbt.png",
       "https://stephanherold.com/Recht_PDF/WilhelmII.pdf<br>https://de.m.wikipedia.org/wiki/Britisch-deutsche_Beziehungen"
     ],
@@ -30,19 +30,19 @@ var st_info = [ // [0]: name, [1]: content, [2]: image-url
     ],
     [
       "Spanien",
-      "Kaiser Friedrich Wilhelm II. forderte für die Deutschen einen <b class='hashtag'>PlatzAnDerSonne</b>. Durch seine Politik geriet er mit Spanien in Konflikt. Der Deutsch-Spanische Vertrag aus dem Jahr 1899 zwang Spanien die Karolinen, die nördlichen Marianen und Palau an Deutschland abzutreten. Die im Pazifik liegenden Südsee-Gebiete bildeten danach einen Teil Deutsch-Neuguineas.",
+      "Kaiser Wilhelm II. forderte für die Deutschen einen <b class='hashtag'>PlatzAnDerSonne</b>. Durch seine Politik geriet er mit Spanien in Konflikt. Der Deutsch-Spanische Vertrag aus dem Jahr 1899 zwang Spanien die Karolinen, die nördlichen Marianen und Palau an Deutschland abzutreten. Die im Pazifik liegenden Südsee-Gebiete bildeten danach einen Teil Deutsch-Neuguineas.",
       "https://i.imgur.com/FJxMxav.png",
       "https://de.wikipedia.org/wiki/Deutsch-spanische_Beziehungen"
     ],
     [
       "Italien",
-      "Durch den Rücktritt von Bismark 1890 ist der italienische Ministerpräsident <b class='hashtag'>Crispi</b> geschwächt. Nach dem Sturtz Crispis möchte Italien die fortschreitende Entfremdung zwischen Großbritannien und dem Deutschen Reich nicht mittragen. Nur noch die Konservativen hielten noch zum Dreibund. Jm Jahr 1913 stieg die Auswanderungen, in die Nachbarstaaten wie zum Beispiel das Deutsche Reich, Schweiz und Österreich-Ungarn, auf bis zu 872.000 Menschen an.",
+      "Durch den Rücktritt von Bismark 1890 ist der italienische Ministerpräsident <b class='hashtag'>Crispi</b> geschwächt. Nach dem Sturtz Crispis möchte Italien die fortschreitende Entfremdung zwischen Großbritannien und dem Deutschen Reich nicht mittragen. Nur noch die Konservativen hielten noch zum Dreibund. Jm Jahr 1913 stieg die Auswanderung, in die Nachbarstaaten wie zum Beispiel das Deutsche Reich, Schweiz und Österreich-Ungarn, auf bis zu 872.000 Menschen an.",
       "https://i.imgur.com/Q7H7GFv.png",
       "Gernert et al.(2016)"
     ],
     [
       "Osmanisches Reich",
-      "Bereits kurz nach der Gründung des Deutschen Reiches wandte sich Sultan Abdülhamid II an Bismarck. Er sah sein Reich durch die Kolonialbestrebungen Frankreichs, Englands, Russlands und Italiens im Orient bedroht.<br>Erste Kooperationen entstanden in militärischen Bereichen. Der Sultan beauftragte deutsche Firmen, seine desolate Armee durch deutsche Waffentechnologie auf Vordermann zu bringen.<br>Der wirtschaftliche Einfluss breitete sich so stark aus, dass deutsche Unternehmen auf dem türkischen Markt Monopolstellungen erreichen konnten. Außerdem realisierten diese Unternehmen die bedeutendsten türkischen Projekte dieser Zeit, wie den Bau der Bagdadbahn oder den der Anatolischen Bahn.<br><b class='hashtag'>Wirtschaftsmonopol</b>",
+      "Bereits kurz nach der Gründung des Deutschen Reiches wandte sich Sultan Abdülhamid II. an Bismarck. Er sah sein Reich durch die Kolonialbestrebungen Frankreichs, Englands, Russlands und Italiens im Orient bedroht.<br>Erste Kooperationen entstanden in militärischen Bereichen. Der Sultan beauftragte deutsche Firmen, seine desolate Armee durch deutsche Waffentechnologie auf Vordermann zu bringen.<br>Der wirtschaftliche Einfluss breitete sich so stark aus, dass deutsche Unternehmen auf dem türkischen Markt Monopolstellungen erreichen konnten. Außerdem realisierten diese Unternehmen die bedeutendsten türkischen Projekte dieser Zeit, wie den Bau der Bagdadbahn oder den der Anatolischen Bahn.<br><b class='hashtag'>Wirtschaftsmonopol</b>",
       "https://i.imgur.com/DiobqqK.png",
       "Peter Philipp Werner, Vorgeschichte I: Osmanisch-deutsche Verflechtungen vor 1915"
     ],
@@ -54,7 +54,7 @@ var st_info = [ // [0]: name, [1]: content, [2]: image-url
     ],
     [
       "Japan",
-      "Japans Beziehung mit dem Deutschen Reich wurde seit der Reichsgründung gut gepflegt. Nach dem ersten Chinesisch-Japanischen Krieg kühlten die Beziehungen jedoch ab. Kohlelieferungen nach Russland während des Russisch-Japanischen Krieges, sowie der in Europa und Amerika populären Rassismus gegenüber fernöstlichen Ethnien in Form der <b class='hashtag'>gelbenGefahr</b> belasteten die Verbindung weiter.",
+      "Japans Beziehung mit dem Deutschen Reich wurde seit der Reichsgründung gut gepflegt. Nach dem ersten Chinesisch-Japanischen Krieg kühlten die Beziehungen jedoch ab. Kohlelieferungen nach Russland während des Russisch-Japanischen Krieges, sowie der in Europa und Amerika populäre Rassismus gegenüber fernöstlichen Ethnien in Form der <b class='hashtag'>gelbenGefahr</b> belasteten die Verbindung weiter.",
       "https://i.imgur.com/XSmYsVT.png",
       "Deutschland - Japan : historische Kontakte / hrsg. von Josef Kreiner",
     ],
