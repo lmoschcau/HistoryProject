@@ -405,3 +405,67 @@ ul:hover #svgJB > .icon path {
     transform: translateY(-100%) rotateX(0deg);
     transition: all 0.2s ease-out 1.5s;
 }
+
+#imageSource {
+    position: fixed;
+    right:0;
+    bottom: 0;
+    z-index: 102;
+    transition: all 0.6s ease-in-out 0.7s;
+    transform:translateX(100%);
+}
+    #imageSource.ext {
+        transform: translateX(75%);
+        transition: all 0.6s ease-in-out 0.0s;
+    }
+    #imageSource:hover {
+        transform: translateX(0%);
+        transition: all 0.6s ease-in-out 0.0s;
+    }
+    #imageSource > div.c {
+        transform: translateY(50%);
+        transition: all 0.4s ease-in-out 0.0s;
+        background-color: #2c2c2c;
+        background-image: url(https://i.imgur.com/kLz9d2D.png);
+        font-size: 0.8rem;
+        font-weight: 300;
+        color: #424a66;
+        padding: 2px;
+    }
+    #imageSource:hover > div.c {
+        transform: translateY(0%);
+        transition: all 0.4s ease-in-out 1s;
+    }
+        #imageSource:hover > div.c:visited, #imageSource:hover > div.c:visited {
+            color: inherit;
+        }
+    #imageSource a {
+        padding:2px;
+        display:block;
+        text-decoration:none;
+    }
+    #imageSource div.b {
+        height: 100%;
+        display: block;
+        position: absolute;
+        background-color: #424a66;
+        background-image: url("https://i.imgur.com/VV2q4HU.png");
+        color: #2c2c2c;
+        left: 0;
+        top: 0;
+        transform: translateX(-100%);
+        padding: 2px;
+        transition: all ease-in-out 1s;
+    }
+    #imageSource div.b::before {
+        content: "Bildquelle";
+        display:block;
+        top:0;
+        padding:2px;
+    }
+        #imageSource div.b::after {
+            content: "Direkter Link";
+            display: block;
+            bottom: 0;
+            padding: 2px;
+        }
