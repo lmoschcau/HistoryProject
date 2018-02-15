@@ -6,7 +6,7 @@ var st_info = [ // [0]: name, [1]: content, [2]: image-url
     ],
     [
       "Dänemark",
-      "Falls das Deutsche Reich Dänemark im Zuge der Eroberung der <b class='hashtag'>Küsten</b> besetzen sollte, würde Dänemark dem Deutschen Reich den Krieg erklären. 1866 hat Dänemark im Deutsch-Dänischen Krieg mit Schleswig und Holstein genug Land verloren, eine weitere Schmach wollte Dänemark nicht erneut zulassen.",
+      "Falls das Deutsche Reich Dänemark im Zuge der Eroberung der <b class='hashtag'>Küsten</b> besetzen sollte, würde Dänemark dem Deutschen Reich den Krieg erklären. 1864 hat Dänemark im Deutsch-Dänischen Krieg mit Schleswig und Holstein genug Land verloren, eine weitere Schmach wollte Dänemark nicht erneut zulassen.",
       "https://i.imgur.com/tM1qHOF.png",
       "https://de.wikipedia.org/wiki/D%C3%A4nisch-deutsche_Beziehungen<br>https://www.welt.de/politik/ausland/article9115012/Vor-146-Jahren-waere-Daenemark-fast-deutsch-geworden.html<br>https://www.planet-wissen.de/kultur/metropolen/kopenhagen/pwiediedeutschenunddiedaenen100.html"
     ],
