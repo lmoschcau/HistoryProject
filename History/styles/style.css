@@ -40,6 +40,7 @@ h2 {
   margin: 0;
   margin-top: 24px;
   padding-left: 24px;
+  color: black;
 }
 
 h3 {
@@ -47,6 +48,7 @@ h3 {
   margin: 0;
   margin-top: 24px;
   margin-bottom: 18px;
+  color: black;
 }
 
 p {
@@ -55,6 +57,7 @@ p {
   font-size: 20px;
   line-height: 28px;
   padding-left: 24px;
+  color: black;
 }
 
 #st_container {
