@@ -8,15 +8,53 @@ this procedure only works with a maximum of two transitions of the same type (cs
 
  */
 
+class Transition {
+    constructor(object, cssStyle, unit, transitionStartScroll, transitionEndScroll, start, end, easing) { // define transition object
+        this.object = object;
+        this.cssStyle = cssStyle;
+        this.unit = unit.split("$V") || $Vpx; // default
+        this.transitionStartScroll = transitionStartScroll;
+        this.transitionEndScroll = transitionEndScroll;
+        this.start = start;
+        this.end = end;
+        this.easing = easing; // easing function from easing.js
+        this.dublicate; // same transition type on same object
+    }
 
-var transitions = {
-    list: [], // creates array of all transition objects
-    addTransition: function (object, cssStyle, unit, transitionStartScroll, transitionEndScroll, start, end, easing) { // function to add a transition to the array
-        this.list.push(new transition(object, cssStyle, unit, transitionStartScroll, transitionEndScroll, start, end, easing));
-    },
-    addTransitionsAutomatic: function () { // function designed to call  addTransition automatic on every element with data-transition set
+    isInRange(scroll) { // check if the specific transition has to get animated
+        return ((this.absolute(this.transitionStartScroll) < scroll) && (scroll < this.absolute(this.transitionEndScroll)));
+    }
+
+    elementIsNotInbetween(dublicate, scroll) { // check if there is another object between scroll and the this object
+        if ((scroll < this.absolute(dublicate.transitionEndScroll) < this.absolute(this.transitionStartScroll)) || (this.absolute(this.transitionEndScroll) > this.absolute(dublicate.transitionStartScroll) > scroll)) { // check for positive or negative
+            return false; // there is a element inbetween (false not)
+        } else { return true; } // there is no element inbetween (not)
+    }
+
+    absolute(value) { // convert from % to px
+        return (value / (100 / scrollFactor) * $(window).height()); // also include scrollFactor
+    }
+
+    updateTransition() { // apply style to HTML element
+        var easingFunction = $.easing[this.easing]; // get function witch the name of easingFunction
+        if (typeof easingFunction === "function") { // check if function exists
+            this.object.style[this.cssStyle] = (this.unit[0] + easingFunction(0, ($(document).scrollTop() - this.absolute(this.transitionStartScroll)), this.start, (this.end - this.start), (this.absolute(this.transitionEndScroll) - this.absolute(this.transitionStartScroll))) + this.unit[1]); // apply and combine value with unit
+        } else { console.error("'" + this.easing + "' is not an easing function") } // trow error if easing Function does not exists
+    }
+}
+
+class TransitionManager {
+    constructor() {
+        this.list = [];
+    }
+
+    addTransition(object, cssStyle, unit, transitionStartScroll, transitionEndScroll, start, end, easing) { // function to add a transition to the array
+        this.list.push(new Transition(object, cssStyle, unit, transitionStartScroll, transitionEndScroll, start, end, easing));
+    }
+
+    addTransitionsAutomatic() { // function designed to call  addTransition automatic on every element with data-transition set
         var objects = $("[data-transition]"); // put all elements with data-transition set into objects
-        function returnOne(first, second) { // shorthand version 
+        let returnOne = (first, second) => { // shorthand version 
             var first = (typeof first !== 'undefined') ? first : second; // return one of the two
             return first;
         }
@@ -24,11 +62,12 @@ var transitions = {
             var transitionsJSON = JSON.parse(objects[i].getAttribute("data-transition").replace(/["']/g, '"')); // get the JSON data AND replace the ' with " AND parse to javascript object
             for (var c = 0; c < transitionsJSON.transitions.length; c++) { // iterate trough javascript object
                 var cu = transitionsJSON.transitions[c]; // set current
-                transitions.addTransition(objects[i], returnOne(cu.c, cu.css), returnOne(cu.u, cu.unit), returnOne(cu.sY, cu.startY), returnOne(cu.eY, cu.endY), returnOne(cu.sV, cu.startValue), returnOne(cu.eV, cu.endValue), returnOne(cu.e, cu.easing)); //call transitions.addTransition() to add transition
+                this.addTransition(objects[i], returnOne(cu.c, cu.css), returnOne(cu.u, cu.unit), returnOne(cu.sY, cu.startY), returnOne(cu.eY, cu.endY), returnOne(cu.sV, cu.startValue), returnOne(cu.eV, cu.endValue), returnOne(cu.e, cu.easing)); //call transitions.addTransition() to add transition
             }
         }
-    },
-    checkForDublicates: function () { // check if another transition of same type is asigned for the same object
+    }
+
+    checkForDublicates() { // check if another transition of same type is asigned for the same object
         for (var i = 0; i < this.list.length; i++) { // iterate trough all objects
             for (var d = 0; d < this.list.length; d++) { // iterate trough all objects again to compare them
                 if ((this.list[i].object == this.list[d].object) && (this.list[i].cssStyle == this.list[d].cssStyle) && i != d) { // if there is a dublicate
@@ -37,76 +76,48 @@ var transitions = {
             }
         }
     }
-};
 
-function transition(object, cssStyle, unit, transitionStartScroll, transitionEndScroll, start, end, easing) { // define transition object
-    this.object = object;
-    this.cssStyle = cssStyle;
-    this.unit = unit.split("$V") || $Vpx; // default
-    this.transitionStartScroll = transitionStartScroll;
-    this.transitionEndScroll = transitionEndScroll;
-    this.start = start;
-    this.end = end;
-    this.easing = easing; // easing function from easing.js
-    this.dublicate; // same transition type on same object
-}
-
-transition.prototype.isInRange = function (scroll) { // check if the specific transition has to get animated
-    return ((this.absolute(this.transitionStartScroll) < scroll) && (scroll < this.absolute(this.transitionEndScroll)));
-}
-
-transition.prototype.elementIsNotInbetween = function (id, scroll) { // check if there is another object between scroll and the this object
-    if ((scroll < this.absolute(transitions.list[id].transitionEndScroll) < this.absolute(this.transitionStartScroll)) || (this.absolute(this.transitionEndScroll) > this.absolute(transitions.list[id].transitionStartScroll) > scroll)) { // check for positive or negative
-        return false; // there is a element inbetween (false not)
-    } else { return true; } // there is no element inbetween (not)
-}
-
-transition.prototype.absolute = function (value) { // convert from % to px
-    return (value / (100 / scrollFactor) * $(window).height()); // also include scrollFactor
-}
-
-transition.prototype.updateTransition = function () { // apply style to HTML element
-    var easingFunction = $.easing[this.easing]; // get function witch the name of easingFunction
-    if (typeof easingFunction === "function") { // check if function exists
-        this.object.style[this.cssStyle] = (this.unit[0] + easingFunction(0, ($(document).scrollTop() - this.absolute(this.transitionStartScroll)), this.start, (this.end - this.start), (this.absolute(this.transitionEndScroll) - this.absolute(this.transitionStartScroll))) + this.unit[1]); // apply and combine value with unit
-    } else { console.error("'" + this.easing + "' is not an easing function") } // trow error if easing Function does not exists
-}
-
-function update() { // call updateTransition() on every transition in Range on requestAnimationFrame()
-    if (flag) { // check if scrolling
-        for (var i = 0; i < transitions.list.length; i++) { // iterate trough all transitions
-            if (transitions.list[i].isInRange($(document).scrollTop())) { // is transition in range
-                transitions.list[i].updateTransition(); // updateTransition()
+    update() { // call updateTransition() on every transition in Range on requestAnimationFrame()
+        if (flag) { // check if scrolling
+            for (var i = 0; i < this.list.length; i++) { // iterate trough all transitions
+                if (this.list[i].isInRange($(document).scrollTop())) { // is transition in range
+                    this.list[i].updateTransition(); // updateTransition()
+                }
             }
         }
+        requestAnimationFrame(() => {this.update()}); // request new animation frame
     }
-    requestAnimationFrame(update); // request new animation frame
-}
 
-function updateFix() { // fix elements wich are misplaced because of steps skipped while scrolling and are out of range
-    scroll = $(document).scrollTop(); // get global scroll
-    for (var i = 0; i < transitions.list.length; i++) { // iterate trough all transitions
-        var nothingBlocking = true; // as a default there is no element blocking
-        var cur = transitions.list[i]; // set short variable
-        if (cur.dublicate != null) { // if there is an dublicate transition check for blocking elements
-            nothingBlocking = cur.elementIsNotInbetween(cur.dublicate, $(document).scrollTop()); // check for the dublicate object
-        }
-        if (nothingBlocking) { // if nothing is blocking
-            if (cur.absolute(cur.transitionStartScroll) > scroll) { // check if scroll is below transitionStartScroll
-                cur.object.style[cur.cssStyle] = (cur.unit[0] + cur.start + cur.unit[1]); // apply and combine value with unit
+    updateFix() { // fix elements wich are misplaced because of steps skipped while scrolling and are out of range
+        scroll = $(document).scrollTop(); // get global scroll
+        for (var i = 0; i < this.list.length; i++) { // iterate trough all transitions
+            var nothingBlocking = true; // as a default there is no element blocking
+            var cur = this.list[i]; // set short variable
+            if (cur.dublicate != null) { // if there is an dublicate transition check for blocking elements
+                nothingBlocking = cur.elementIsNotInbetween(this.list[cur.dublicate], $(document).scrollTop()); // check for the dublicate object
             }
-            if (cur.absolute(cur.transitionEndScroll) < scroll) { // check if scroll is above transitionEndScroll
-                cur.object.style[cur.cssStyle] = (cur.unit[0] + cur.end + cur.unit[1]); // apply and combine value with unit
+            if (nothingBlocking) { // if nothing is blocking
+                if (cur.absolute(cur.transitionStartScroll) > scroll) { // check if scroll is below transitionStartScroll
+                    cur.object.style[cur.cssStyle] = (cur.unit[0] + cur.start + cur.unit[1]); // apply and combine value with unit
+                }
+                if (cur.absolute(cur.transitionEndScroll) < scroll) { // check if scroll is above transitionEndScroll
+                    cur.object.style[cur.cssStyle] = (cur.unit[0] + cur.end + cur.unit[1]); // apply and combine value with unit
+                }
+    
             }
-
         }
     }
 }
 
+
+
+var transitions
 function init() { // initalize combined function
+    transitions = new TransitionManager();
     transitions.addTransitionsAutomatic(); // initally add transitions automatic
     transitions.checkForDublicates();
-    update(); // start update() cicle
+    transitions.update(); // start update() cicle
+    setInterval(() => {transitions.updateFix()}, 500); // call updateFix every 500ms to resolve issues
 }
 $(init); // call init() once dom is ready to be manipulated
 
@@ -120,5 +131,3 @@ $(window).scroll(function () { // check if user is scrolling
         flag = false; // callback function is used to reset flag
     }, 200); // timeout after 200ms
 });
-
-setInterval(updateFix, 500); // call updateFix every 500ms to resolve issues
