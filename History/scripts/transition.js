@@ -1,4 +1,4 @@
-scrollFactor = 2; // devide speed by Factor
+scrollFactor = 2; // divide speed by Factor
 /*
 ===================================== general =========================================================
 all transitions. methods deal with the administration of transitions
@@ -18,17 +18,17 @@ class Transition {
         this.start = start;
         this.end = end;
         this.easing = easing; // easing function from easing.js
-        this.dublicate; // same transition type on same object
+        this.duplicate; // same transition type on same object
     }
 
     isInRange(scroll) { // check if the specific transition has to get animated
         return ((this.absolute(this.transitionStartScroll) < scroll) && (scroll < this.absolute(this.transitionEndScroll)));
     }
 
-    elementIsNotInbetween(dublicate, scroll) { // check if there is another object between scroll and the this object
-        if ((scroll < this.absolute(dublicate.transitionEndScroll) < this.absolute(this.transitionStartScroll)) || (this.absolute(this.transitionEndScroll) > this.absolute(dublicate.transitionStartScroll) > scroll)) { // check for positive or negative
-            return false; // there is a element inbetween (false not)
-        } else { return true; } // there is no element inbetween (not)
+    elementIsNotInBetween(duplicate, scroll) { // check if there is another object between scroll and the this object
+        if ((scroll < this.absolute(duplicate.transitionEndScroll) < this.absolute(this.transitionStartScroll)) || (this.absolute(this.transitionEndScroll) > this.absolute(duplicate.transitionStartScroll) > scroll)) { // check for positive or negative
+            return false; // there is a element in between (false not)
+        } else { return true; } // there is no element in between (not)
     }
 
     absolute(value) { // convert from % to px
@@ -67,11 +67,11 @@ class TransitionManager {
         }
     }
 
-    checkForDublicates() { // check if another transition of same type is asigned for the same object
+    checkForDuplicates() { // check if another transition of same type is assigned for the same object
         for (var i = 0; i < this.list.length; i++) { // iterate trough all objects
             for (var d = 0; d < this.list.length; d++) { // iterate trough all objects again to compare them
-                if ((this.list[i].object == this.list[d].object) && (this.list[i].cssStyle == this.list[d].cssStyle) && i != d) { // if there is a dublicate
-                    this.list[i].dublicate = d; // set dublicate
+                if ((this.list[i].object == this.list[d].object) && (this.list[i].cssStyle == this.list[d].cssStyle) && i != d) { // if there is a duplicate
+                    this.list[i].duplicate = d; // set duplicate
                 }
             }
         }
@@ -88,13 +88,13 @@ class TransitionManager {
         requestAnimationFrame(() => {this.update()}); // request new animation frame
     }
 
-    updateFix() { // fix elements wich are misplaced because of steps skipped while scrolling and are out of range
+    updateFix() { // fix elements which are misplaced because of steps skipped while scrolling and are out of range
         scroll = $(document).scrollTop(); // get global scroll
         for (var i = 0; i < this.list.length; i++) { // iterate trough all transitions
             var nothingBlocking = true; // as a default there is no element blocking
             var cur = this.list[i]; // set short variable
-            if (cur.dublicate != null) { // if there is an dublicate transition check for blocking elements
-                nothingBlocking = cur.elementIsNotInbetween(this.list[cur.dublicate], $(document).scrollTop()); // check for the dublicate object
+            if (cur.duplicate != null) { // if there is an duplicate transition check for blocking elements
+                nothingBlocking = cur.elementIsNotInBetween(this.list[cur.duplicate], $(document).scrollTop()); // check for the duplicate object
             }
             if (nothingBlocking) { // if nothing is blocking
                 if (cur.absolute(cur.transitionStartScroll) > scroll) { // check if scroll is below transitionStartScroll
@@ -112,11 +112,11 @@ class TransitionManager {
 
 
 var transitions
-function init() { // initalize combined function
+function init() { // initialize combined function
     transitions = new TransitionManager();
-    transitions.addTransitionsAutomatic(); // initally add transitions automatic
-    transitions.checkForDublicates();
-    transitions.update(); // start update() cicle
+    transitions.addTransitionsAutomatic(); // initially add transitions automatic
+    transitions.checkForDuplicates();
+    transitions.update(); // start update() circle
     setInterval(() => {transitions.updateFix()}, 500); // call updateFix every 500ms to resolve issues
 }
 $(init); // call init() once dom is ready to be manipulated
